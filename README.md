@@ -1,7 +1,7 @@
 # Fatescope — 个人主页 / Personal Home
 
 > 一个中英双语的个人站点：Aurora 动态 Hero、玻璃质感卡片、智能导航（滚动/点击高亮）、瀑布流相册 + Lightbox、语言切换（typed routes 兼容）。  
-> **Online demo**：部署后在此放链接（例如 `https://your-domain.com`）。
+> **Online demo**：Coming Soon
 
 ---
 
@@ -121,8 +121,6 @@ Fatescope App（算法/后端）：独立仓库与许可，暂不公开
 
 🤝 合作 & 联系
 
-Email: hello@fatescope.com
-
-Substack: （填入你的地址）
+Email: franciszz937@gmail.com
 
 欢迎就云原生/AWS/Infra/数据流水线/视觉叙事等方向交流合作
