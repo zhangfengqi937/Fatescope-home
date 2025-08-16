@@ -1,6 +1,7 @@
 // components/HeroAurora.tsx
 import FeatherPhoto from "./FeatherPhoto";
 import Sparkle from "./Sparkle";
+import Button from "./Button";
 
 export default function HeroAurora() {
   return (
@@ -17,15 +18,15 @@ export default function HeroAurora() {
       <div className="absolute inset-0 -z-10">
         <div
           className="aurora-blob aurora-anim-a absolute -top-32 -left-28 w-[56rem] h-[22rem]"
-          style={{ background: 'radial-gradient(60rem 20rem at 50% 50%, rgba(250,204,21,0.30), transparent 60%)' }}
+          style={{ background: "radial-gradient(60rem 20rem at 50% 50%, rgba(250,204,21,0.30), transparent 60%)" }}
         />
         <div
           className="aurora-blob aurora-anim-b absolute -top-32 -right-24 w-[52rem] h-[20rem]"
-          style={{ background: 'radial-gradient(55rem 18rem at 50% 50%, rgba(34,197,94,0.24), transparent 60%)' }}
+          style={{ background: "radial-gradient(55rem 18rem at 50% 50%, rgba(34,197,94,0.24), transparent 60%)" }}
         />
         <div
           className="aurora-blob aurora-anim-a absolute -bottom-24 left-1/2 -translate-x-1/2 w-[60rem] h-[24rem]"
-          style={{ background: 'radial-gradient(60rem 22rem at 50% 50%, rgba(132,204,22,0.20), transparent 60%)' }}
+          style={{ background: "radial-gradient(60rem 22rem at 50% 50%, rgba(132,204,22,0.20), transparent 60%)" }}
         />
       </div>
 
@@ -40,12 +41,12 @@ export default function HeroAurora() {
         </div>
       </div>
 
-      {/* 羽毛锚点 */}
+      {/* 羽毛锚点（修正动画类名） */}
       <div
         className="
           pointer-events-none absolute inset-y-0 right-8 md:right-16
           hidden md:flex items-center z-[12]
-          animate-[featherfade_900ms_ease-out_120ms_both]
+          animate-feather-fade
         "
         aria-hidden="true"
       >
@@ -54,37 +55,10 @@ export default function HeroAurora() {
 
       {/* 星光（右侧点缀） */}
       <div className="pointer-events-none absolute inset-0 z-[14] hidden md:block">
-        {/* 右上（大） */}
-        <Sparkle
-          size={36}
-          delay={200}
-          className="absolute animate-sparkle mix-blend-screen"
-          style={{
-          right: '11%', /* 距右侧 11% */
-          top: '6%'     /* 距顶部 6% */
-        }}
-        />
-        {/* 右上稍左（中） */}
-        <Sparkle
-          size={26}
-          delay={600}
-          className="absolute animate-sparkle mix-blend-screen"
-          style={{ right: '20%', top: '12%' }}
-        />
-        {/* 羽毛中段（小，带漂浮） */}
-        <Sparkle
-          size={20}
-          delay={950}
-          className="absolute animate-sparkle animate-floaty mix-blend-screen"
-          style={{ right: '16%', top: '28%' }}
-        />
-        {/* 羽毛下方（最小） */}
-        <Sparkle
-          size={18}
-          delay={1300}
-          className="absolute animate-sparkle mix-blend-screen"
-          style={{ right: '24%', top: '38%' }}
-        />
+        <Sparkle size={36} delay={200} className="absolute animate-sparkle" style={{ right: "11%", top: "6%" }} />
+        <Sparkle size={26} delay={600} className="absolute animate-sparkle" style={{ right: "20%", top: "12%" }} />
+        <Sparkle size={20} delay={950} className="absolute animate-sparkle animate-floaty" style={{ right: "16%", top: "28%" }} />
+        <Sparkle size={18} delay={1300} className="absolute animate-sparkle" style={{ right: "24%", top: "38%" }} />
       </div>
 
       {/* 主要内容 */}
@@ -101,23 +75,50 @@ export default function HeroAurora() {
 
         <div className="mt-2 h-1.5 w-28 rounded-full bg-gradient-to-r from-amber-400 via-lime-400 to-emerald-400" />
 
-        <p className="mt-4 text-lg md:text-xl text-slate-700 max-w-3xl">
+        <p className="mt-4 text-lg md:text-xl text-slate-700 max-w-3xl zh-leading">
           Photography · Writing · Fatescope App — Cloud + AI + Independent algorithms for kinder guidance.
         </p>
 
+        {/* 标签按钮（chip） */}
         <div className="mt-5 flex flex-wrap gap-2 text-sm md:text-base">
-          <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-amber-300/60">Independent engine</span>
-          <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-amber-300/60">Cloud + AI</span>
-          <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-amber-300/60">Kind guidance</span>
+          <Button as="span" variant="tag" size="sm">Independent engine</Button>
+          <Button as="span" variant="tag" size="sm">Cloud + AI</Button>
+          <Button as="span" variant="tag" size="sm">Kind guidance</Button>
         </div>
 
-        <a href="#gallery" className="inline-flex items-center gap-2 mt-7 text-base text-slate-700 hover:text-slate-900">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-               className="w-5 h-5 translate-y-px" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M6 9l6 6 6-6" />
-          </svg>
-          Explore photos
-        </a>
+        {/* 主/次 CTA */}
+        <div className="mt-7 flex flex-wrap items-center gap-3">
+          <Button
+            href="https://fatescope.app"
+            rel="noopener noreferrer"
+            variant="primary"
+            size="md"
+          >
+            Start your journey
+          </Button>
+
+          <Button
+            href="https://fatescope.substack.com"
+            rel="noopener noreferrer"
+            variant="secondary"
+            size="md"
+          >
+            Read stories
+          </Button>
+
+          {/* 安静的探索链接 */}
+          <a
+            href="#gallery"
+            className="inline-flex items-center gap-2 text-base text-slate-700 hover:text-slate-900"
+            aria-label="Explore photos"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              className="w-5 h-5 translate-y-px" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+            Explore photos
+          </a>
+        </div>
       </div>
     </section>
   );

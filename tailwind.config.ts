@@ -58,11 +58,17 @@ const config: Config = {
         },
       },
       boxShadow: {
-        soft: "0 10px 25px rgba(0,0,0,.08)",
-      },
-      borderRadius: {
-        card: "1.25rem",
-      },
+    // 卡片默认 & hover
+    card: "0 4px 12px rgba(15, 23, 42, 0.08)",   // (0,4,12)
+    "card-hover": "0 8px 24px rgba(15, 23, 42, 0.10)",
+    // 按钮的轻影
+    btn: "0 2px 8px rgba(15, 23, 42, 0.10)",
+    "btn-hover": "0 4px 16px rgba(15, 23, 42, 0.14)",
+  },
+  borderRadius: {
+    card: "1.25rem",   // 统一卡片圆角
+    btn: "9999px",     // 按钮统一“胶囊”造型（pill）
+  },
     },
   },
   plugins: [],

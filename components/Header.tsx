@@ -30,7 +30,6 @@ export default function Header() {
 
     const obs = new IntersectionObserver(
       entries => {
-        // 找最靠近视口上缘的那个分区作为激活项
         const visible = entries
           .filter(e => e.isIntersecting)
           .sort((a, b) => Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top));
@@ -46,45 +45,47 @@ export default function Header() {
   // 点击导航：立即高亮 + 平滑滚动 + 更新 hash（不刷新）
   const goTo = (id: string, fromMobile?: boolean) => (e: React.MouseEvent) => {
     e.preventDefault();
-    setActive(id); // 立即高亮
+    setActive(id);
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // 更新地址栏的 #hash（不跳转新页面）
     if (typeof window !== 'undefined') {
       const url = `${window.location.pathname}#${id}`;
       window.history.replaceState(null, '', url);
     }
 
-    // 如果是移动端菜单里点的，收起 <details>
     if (fromMobile) {
       const details = (e.currentTarget.closest('details') as HTMLDetailsElement | null);
       if (details) details.open = false;
     }
   };
 
-  // 样式：Hover 明显；Active 为蓝色胶囊
-    const isEn = pathname.startsWith('/en');
-    const activeBg = isEn ? 'bg-sky-600' : 'bg-emerald-600';
-
-    const linkCls = (id: string) =>
-    [
-        'px-3 py-1.5 rounded-full text-[15px] transition-all duration-200',
-        active === id
-        ? `${activeBg} text-white shadow-sm shadow-slate-900/10`
-        : 'text-slate-700 hover:text-slate-900 hover:bg-sky-100/70 hover:shadow-sm ring-1 ring-transparent hover:ring-sky-300/70',
-    ].join(' ');
+  // 样式
+  const isEn = pathname.startsWith('/en');
+  const activeBg = isEn ? 'bg-sky-600' : 'bg-emerald-600';
+  const linkCls = (id: string) => [
+    'px-3 py-1.5 rounded-full text-[15px] transition-all duration-200',
+    active === id
+      ? `${activeBg} text-white shadow-sm shadow-slate-900/10`
+      : 'text-slate-700 hover:text-slate-900 hover:bg-sky-100/70 hover:shadow-sm ring-1 ring-transparent hover:ring-sky-300/70',
+  ].join(' ');
 
   return (
     <header className="sticky top-0 z-50">
       <div className="relative bg-gradient-to-b from-white/70 to-sky-100/40 backdrop-blur supports-[backdrop-filter]:bg-white/60 ring-1 ring-sky-900/10 shadow-[0_6px_20px_rgba(15,23,42,0.06)]">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-sky-300/60 to-transparent" />
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between gap-4">
+          {/* 左侧品牌：新增 favicon 图标 */}
           <a href={base} className="flex items-center gap-3 font-semibold tracking-wide text-base md:text-lg text-slate-900">
-            Fatescope
+            <img
+              src="/assets/favicon.png"
+              alt="Fatescope feather"
+              className="w-7 h-7 rounded-lg shadow-sm ring-1 ring-slate-900/5"
+            />
+            <span>Fatescope</span>
           </a>
 
-          {/* 桌面 */}
+          {/* 桌面导航 */}
           <div className="hidden md:flex items-center gap-6">
             <nav className="flex items-center gap-2">
               {SECTIONS.map(s => (
@@ -104,7 +105,7 @@ export default function Header() {
             </div>
           </div>
 
-          {/* 移动端 */}
+          {/* 移动端菜单 */}
           <details className="md:hidden relative">
             <summary className="list-none cursor-pointer px-3 py-1.5 rounded-md text-base ring-1 ring-slate-300 bg-white/70 backdrop-blur">
               Menu
