@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 锚点滚动别被 Header 遮住 */
+section { scroll-margin-top: 4.5rem; }
+
+/* ===== Aurora 动画（极轻） ===== */
+@keyframes auroraMoveA {
+  0%   { transform: translate3d(0,0,0) rotate(0deg); }
+  50%  { transform: translate3d(3%, -3%, 0) rotate(2deg); }
+  100% { transform: translate3d(0,0,0) rotate(0deg); }
+}
+@keyframes auroraMoveB {
+  0%   { transform: translate3d(0,0,0) rotate(0deg); }
+  50%  { transform: translate3d(-2%, 2%, 0) rotate(-1.5deg); }
+  100% { transform: translate3d(0,0,0) rotate(0deg); }
+}
+@keyframes auroraShimmer {
+  0%,100% { opacity: .55; }
+  50%     { opacity: .9; }
+}
+
+/* 小工具类 */
+.aurora-blob { filter: blur(48px); opacity: .55; will-change: transform, opacity; }
+.aurora-anim-a { animation: auroraMoveA 60s ease-in-out infinite; }
+.aurora-anim-b { animation: auroraMoveB 80s ease-in-out infinite; }
+.aurora-shimmer { animation: auroraShimmer 12s ease-in-out infinite; }
+
+/* 关怀低动态偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .aurora-anim-a, .aurora-anim-b, .aurora-shimmer { animation: none !important; }
+}
+
+/* 让 Aurora 更快：给容器加 .aurora-fast / .aurora-faster 即可 */
+.aurora-fast   .aurora-anim-a { animation-duration: 30s; }
+.aurora-fast   .aurora-anim-b { animation-duration: 40s; }
+.aurora-fast   .aurora-shimmer { animation-duration: 8s; }
+
+.aurora-faster .aurora-anim-a { animation-duration: 18s; }
+.aurora-faster .aurora-anim-b { animation-duration: 24s; }
+.aurora-faster .aurora-shimmer { animation-duration: 6s; }

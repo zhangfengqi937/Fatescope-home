@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { @apply bg-skyInk-50 text-slate-800 antialiased; }
+.card { @apply rounded-card shadow-soft bg-white; }
+.link { @apply underline underline-offset-4 decoration-slate-300 hover:decoration-slate-500; }

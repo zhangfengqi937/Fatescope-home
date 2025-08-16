@@ -1,0 +1,29 @@
+# Node / Next.js
+node_modules/
+.next/
+out/
+dist/
+.cache/
+.turbo/
+.pnpm-store/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+
+# Env (不要提交密钥；可留一个模板)
+.env*
+!.env.example
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json   # 如需共享推荐扩展，保留它
+!.vscode/settings.json     # 如需共享通用格式化/空格规则，保留它
+
+# Tooling / Host
+.vercel
+.netlify
