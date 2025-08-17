@@ -9,7 +9,7 @@ export default function AboutPage() {
         </p>
         <div className="text-sm">
           <p><strong>Open to:</strong> technical/creative collaborations, platform partnerships, cloud/infra optimization, data pipelines & evaluation, visual storytelling.</p>
-          <p className="mt-1"><strong>Contact:</strong> <a className="link" href="mailto:hello@fatescope.com">hello@fatescope.com</a></p>
+          <p className="mt-1"><strong>Contact:</strong> <a className="link" href="mailto:contact@fatescope.com">contact@fatescope.com</a></p>
         </div>
       </div>
     </section>

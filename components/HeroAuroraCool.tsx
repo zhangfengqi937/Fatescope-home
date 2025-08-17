@@ -60,6 +60,7 @@ export default function HeroAuroraCool() {
         <Sparkle size={26} delay={600} className="absolute animate-sparkle mix-blend-screen" style={{ right: "20%", top: "12%" }} />
         <Sparkle size={20} delay={950} className="absolute animate-sparkle animate-floaty mix-blend-screen" style={{ right: "16%", top: "28%" }} />
         <Sparkle size={18} delay={1300} className="absolute animate-sparkle mix-blend-screen" style={{ right: "24%", top: "38%" }} />
+
       </div>
 
       {/* 文案区 */}
@@ -104,14 +105,15 @@ export default function HeroAuroraCool() {
           >
             Start your journey
           </Button>
+          
           <Button
-            href="https://substack.com/@fatescopewords"
-            rel="noopener noreferrer"
-            variant="outline"
-            size="md"
-          >
-            Read stories
-          </Button>
+                      href="https://fatescope.substack.com"
+                      rel="noopener noreferrer"
+                      variant="secondary"
+                      size="md"
+                    >
+                      Read stories
+                    </Button>
 
           <a
             href="#gallery"

@@ -17,7 +17,7 @@ export default function FeatherPhoto({ className = "" }: { className?: string })
       }}
     >
       <Image
-        src="/images/Feather-clear.png" // ← 把你的这张图存到 public/images/ 下
+        src="/images/Feather-clear.png" // ← public/images/ 下
         alt="Feather"
         width={800}
         height={1200}

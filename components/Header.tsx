@@ -11,6 +11,12 @@ const SECTIONS = [
   { id: 'about', label: 'About' },
 ];
 
+// 你的 GitHub 链接
+const GITHUB_LINKS = [
+  { href: 'https://github.com/zhangfengqi937/fatescope-home', label: 'Homepage Repo' },
+  { href: 'https://github.com/zhangfengqi937/fatescope-app-docs', label: 'Fatescope Docs' },
+];
+
 export default function Header() {
   const [active, setActive] = useState<string | null>(null);
   const pathname = usePathname();
@@ -75,7 +81,7 @@ export default function Header() {
       <div className="relative bg-gradient-to-b from-white/70 to-sky-100/40 backdrop-blur supports-[backdrop-filter]:bg-white/60 ring-1 ring-sky-900/10 shadow-[0_6px_20px_rgba(15,23,42,0.06)]">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-sky-300/60 to-transparent" />
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between gap-4">
-          {/* 左侧品牌：新增 favicon 图标 */}
+          {/* 左侧品牌：favicon + 文案 */}
           <a href={base} className="flex items-center gap-3 font-semibold tracking-wide text-base md:text-lg text-slate-900">
             <img
               src="/assets/favicon.png"
@@ -100,6 +106,34 @@ export default function Header() {
                 </a>
               ))}
             </nav>
+
+            {/* GitHub 下拉（原生 <details> 实现） */}
+            <details className="relative">
+              <summary
+                className="list-none cursor-pointer p-2 rounded-full hover:bg-slate-100 transition flex items-center"
+                aria-label="GitHub repositories"
+              >
+                {/* GitHub Icon (inline SVG) */}
+                <svg viewBox="0 0 16 16" aria-hidden="true" className="w-5 h-5 fill-slate-800">
+                  <path d="M8 0C3.58 0 0 3.64 0 8.13c0 3.59 2.29 6.63 5.47 7.7.4.08.55-.18.55-.39 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.5-2.69-.96-.09-.24-.48-.96-.82-1.16-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.22 1.87.88 2.33.67.07-.53.28-.88.51-1.08-1.78-.2-3.64-.91-3.64-4.05 0-.9.31-1.64.82-2.22-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.85a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.07 2.2-.85 2.2-.85.44 1.1.16 1.92.08 2.12.51.58.82 1.32.82 2.22 0 3.15-1.87 3.84-3.65 4.05.29.26.54.77.54 1.56 0 1.12-.01 2.02-.01 2.29 0 .21.15.47.55.39A8.03 8.03 0 0 0 16 8.13C16 3.64 12.42 0 8 0Z"/>
+                </svg>
+              </summary>
+              <div className="absolute right-0 top-full mt-2 w-56 bg-white/95 backdrop-blur rounded-xl shadow-lg ring-1 ring-slate-200 p-2">
+                {GITHUB_LINKS.map(link => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-3 py-2 rounded-lg text-sm text-slate-700 hover:bg-slate-50"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </details>
+
+            {/* 语言切换器 */}
             <div className="ml-1">
               <LangSwitcher />
             </div>
@@ -110,7 +144,7 @@ export default function Header() {
             <summary className="list-none cursor-pointer px-3 py-1.5 rounded-md text-base ring-1 ring-slate-300 bg-white/70 backdrop-blur">
               Menu
             </summary>
-            <div className="absolute right-0 top-full mt-2 w-52 bg-white/90 backdrop-blur rounded-xl shadow-lg ring-1 ring-slate-200 p-2 flex flex-col text-base">
+            <div className="absolute right-0 top-full mt-2 w-56 bg-white/90 backdrop-blur rounded-xl shadow-lg ring-1 ring-slate-200 p-2 flex flex-col text-base">
               {SECTIONS.map(s => (
                 <a
                   key={s.id}
@@ -121,6 +155,25 @@ export default function Header() {
                   {s.label}
                 </a>
               ))}
+
+              {/* 分割线 */}
+              <div className="my-2 h-px bg-slate-200/70" />
+
+              {/* GitHub 链接（移动端直接展开两条） */}
+              <div className="px-2 pb-1 text-sm text-slate-500">GitHub</div>
+              {GITHUB_LINKS.map(link => (
+                
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-2 rounded-lg hover:bg-slate-50 text-[15px] text-slate-700"
+                >
+                  {link.label}
+                </a>
+              ))}
+
               <div className="border-t my-2" />
               <LangSwitcher />
             </div>

@@ -87,7 +87,7 @@ export default function HeroAurora() {
         </div>
 
         {/* 主/次 CTA */}
-        <div className="mt-7 flex flex-wrap items-center gap-3">
+        <div className="mt-8 flex flex-wrap gap-4">
           <Button
             href="https://fatescope.app"
             rel="noopener noreferrer"

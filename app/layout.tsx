@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {children}
 
-        <footer className="text-center text-xs text-slate-500 py-10">
+        <footer className="text-center text-s text-slate-500 py-10">
           © {new Date().getFullYear()} Fatescope · Built with love and clarity.
         </footer>
       </body>
