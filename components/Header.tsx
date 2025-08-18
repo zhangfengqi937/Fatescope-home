@@ -3,6 +3,10 @@
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import LangSwitcher from './LangSwitcher';
+// 顶部：Sora，改成 500（可再备 400）
+import { Sora } from "next/font/google";
+const brandFont = Sora({ subsets: ["latin"], weight: ["500", "400"] });
+
 
 const SECTIONS = [
   { id: 'app', label: 'App' },
@@ -81,15 +85,24 @@ export default function Header() {
       <div className="relative bg-gradient-to-b from-white/70 to-sky-100/40 backdrop-blur supports-[backdrop-filter]:bg-white/60 ring-1 ring-sky-900/10 shadow-[0_6px_20px_rgba(15,23,42,0.06)]">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-sky-300/60 to-transparent" />
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between gap-4">
-          {/* 左侧品牌：favicon + 文案 */}
-          <a href={base} className="flex items-center gap-3 font-semibold tracking-wide text-base md:text-lg text-slate-900">
-            <img
-              src="/assets/favicon.png"
-              alt="Fatescope feather"
-              className="w-7 h-7 rounded-lg shadow-sm ring-1 ring-slate-900/5"
-            />
-            <span>Fatescope</span>
-          </a>
+
+          
+      {/* 品牌：浅蓝 → 绿 → 金 的规则渐变 */}
+      <a href={base} className="flex items-center gap-3 group">
+        <img src="/assets/favicon.png" alt="" className="w-7 h-7 rounded-lg ring-1 ring-slate-900/5" />
+        <span
+          className={`${brandFont.className}
+            text-[21px] md:text-[22px] font-medium tracking-[0.006em]
+            text-slate-900 leading-none
+            [text-shadow:0.8px_0.8px_0_rgba(15,23,42,.18),_-0.6px_-0.6px_0_rgba(255,255,255,.55)]
+            group-hover:bg-[linear-gradient(90deg,_#f59e0b_0%,_#34d399_58%,_#93c5fd_100%)]
+            group-hover:bg-clip-text group-hover:text-transparent
+            transition-colors duration-300`}
+        >
+          Fatescope
+        </span>
+      </a>
+
 
           {/* 桌面导航 */}
           <div className="hidden md:flex items-center gap-6">

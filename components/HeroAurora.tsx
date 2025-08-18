@@ -69,9 +69,23 @@ export default function HeroAurora() {
           Fatescope · Cloud + AI
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">
+        <h1
+          className="
+      text-[clamp(28px,6.5vw,48px)]   /* 响应式字号，避免小屏过大 */
+      font-medium md:font-semibold
+      tracking-[-0.01em] leading-tight
+      text-slate-900
+      [text-shadow:0.8px_0.8px_0_rgba(15,23,42,.18),_-0.6px_-0.6px_0_rgba(255,255,255,.55)]
+      transition-[color,background] duration-300
+      /* 如果想像品牌名那样：hover 再显渐变，可保留下面两行 */
+      group-hover:bg-[linear-gradient(90deg,#f59e0b_0%,#34d399_58%,#93c5fd_100%)]
+      group-hover:bg-clip-text group-hover:text-transparent
+    "
+        >
           Light in the Quiet
         </h1>
+
+
 
         <div className="mt-2 h-1.5 w-28 rounded-full bg-gradient-to-r from-amber-400 via-lime-400 to-emerald-400" />
 

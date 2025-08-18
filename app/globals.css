@@ -40,3 +40,11 @@ section { scroll-margin-top: 4.5rem; }
 .aurora-faster .aurora-anim-a { animation-duration: 18s; }
 .aurora-faster .aurora-anim-b { animation-duration: 24s; }
 .aurora-faster .aurora-shimmer { animation-duration: 6s; }
+
+/* 下划线 */
+.brand-line-warm{
+  background: linear-gradient(90deg,#f59e0b 0%,#34d399 58%,#93c5fd 100%);
+}
+.brand-line-cool{
+  background: linear-gradient(90deg,#22d3ee 0%,#60a5fa 55%,#818cf8 100%);
+}
