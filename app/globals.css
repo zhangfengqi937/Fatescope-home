@@ -48,3 +48,30 @@ section { scroll-margin-top: 4.5rem; }
 .brand-line-cool{
   background: linear-gradient(90deg,#22d3ee 0%,#60a5fa 55%,#818cf8 100%);
 }
+
+/* 轻微漂浮（幅度更大；持续进行） */
+@keyframes feather-float {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%      { transform: translate3d(0, -12px, 0) rotate(0.5deg); } /* 幅度从 -6px → -12px */
+}
+
+/* 如果之前加过“扑闪”动画，保留也行；这次不会再使用它 */
+@keyframes feather-flutter {
+  0%   { transform: translate3d(0,0,0) rotate(0deg); }
+  20%  { transform: translate3d(2px,-2px,0) rotate(1.2deg); }
+  40%  { transform: translate3d(-2px,1px,0) rotate(-1deg); }
+  60%  { transform: translate3d(1px,-1px,0) rotate(0.8deg); }
+  80%  { transform: translate3d(-1px,1px,0) rotate(-0.6deg); }
+  100% { transform: translate3d(0,0,0) rotate(0deg); }
+}
+
+/* 系统“减少动效”时停用动画 */
+@media (prefers-reduced-motion: reduce) {
+  .feather-float-anim { animation: none !important; }
+}
+
+@keyframes bg-drift {
+  0%,100% { transform: translate3d(0,0,0) rotate(-2deg); }
+  50%     { transform: translate3d(0,-10px,0) rotate(-2.6deg); }
+}
+
