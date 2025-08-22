@@ -2,8 +2,7 @@
 import "./globals.css";
 import Header from "../components/Header";
 import LangGate from "../components/LangGate";
-// import Navbar from "@/components/Nav"; // ← 如需使用再打开
-import PhoenixGlobalBg from "@/components/PhoenixGlobalBg"; // ← 新增
+import PhoenixGlobalBg from "@/components/PhoenixGlobalBg";
 
 export const metadata = {
   title: "Fatescope — Francis Zhang",
@@ -13,23 +12,56 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    // 说明：把 lang 改为 "zh" 以匹配 globals.css 里的 `html:lang(zh)` 行高规则
     <html lang="zh" className="scroll-smooth">
       <body className="relative bg-sky-100 text-slate-800 antialiased text-[17px] md:text-[18px] leading-relaxed">
-        {/* ✅ 全站幽灵水印背景（冷色版）；移动端也显示，如需隐藏可传 hideOnMobile */}
-        <PhoenixGlobalBg variant="cool" hideOnMobile={false} />
+        {/* 1) 全站背景（fixed，z-0） */}
+        <PhoenixGlobalBg
+          imageSrc="/images/phoenix-bg-3.png"
+          imageOpacity={0.35}
+          imageAnchor="center-right"
+          strongMask={false}
+          fadeLeft
+          glowTail
+          // 把光晕移动到更靠右下；再放大 1.6 倍；用更强的混合
+          glowStyle={{ right: "4%", bottom: "16%" }}
+          glowScale={1.6}
+          glowBlend="plus-lighter"   // 浏览器不支持时自动退化为普通混合
 
-        {/* 导航/门控 */}
-        <Header />
-        <LangGate />
-        {/* <Navbar /> */}
+          imageClassName="
+    w-[58vw] max-w-[1200px]
+    right-[-12%] -translate-y-1/2
+    rotate-[-1.5deg] mix-blend-soft-light
+  "
+        />
 
-        {/* 页面内容 */}
+        {/* 1.5) 左侧月亮背景 */}
+        <div
+          aria-hidden
+          className="fixed inset-0 z-[5] pointer-events-none select-none"
+        >
+          <img
+            src="/images/moon-left-1.png"
+            alt=""
+            className="
+      absolute left-10 top-10        /* 先放到可见区域，避免负偏移看不到 */
+      w-[420px] md:w-[520px]
+      opacity-80                      /* 提高透明度，先确保看得到 */
+    "
+          />
+        </div>
+        {/* 2) 导航（放在主内容之前；提高层级） */}
+        <div className="relative z-30">
+          <Header />
+          <LangGate />
+        </div>
+
+        {/* 3) 主内容（单一 main；盖在背景之上） */}
         <main className="relative z-10">
           {children}
         </main>
 
-        <footer className="text-center text-s text-slate-500 py-10">
+        {/* 4) 页脚 */}
+        <footer className="mt-8 text-center text-[13px] text-slate-500 pb-8">
           © {new Date().getFullYear()} Fatescope · Built with love and clarity.
         </footer>
       </body>

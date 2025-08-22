@@ -173,7 +173,7 @@ export default function HomeEn() {
                     [text-shadow:0.8px_0.8px_0_rgba(15,23,42,.18),_-0.6px_-0.6px_0_rgba(255,255,255,.55)]
                   "
                 >
-                  Substack
+                  Healing Notes
                 </h2>
                 <span className="block h-[2px] w-10 rounded brand-line-warm" />
               </div>

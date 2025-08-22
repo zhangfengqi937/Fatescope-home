@@ -9,6 +9,14 @@ import Image from "next/image";
 import { Tag } from "@/components/Tag";
 import { Badge } from "@/components/Badge";
 
+import { NotebookPen, Camera, AppWindow, Globe, Mail } from "lucide-react";
+import InstagramBrandIcon from "@/components/InstagramBrandIcon";
+
+import TerminalChangelogDigest from '@/components/TerminalChangelogDigest';
+
+
+const iconCls = "h-4 w-4 mr-1.5 translate-y-[1px] opacity-80";
+
 const photos = [
   "/images/01.jpg", "/images/02.jpg", "/images/03.jpg", "/images/04.jpg",
   "/images/05.jpg", "/images/06.jpg", "/images/07.jpg", "/images/08.jpg",
@@ -178,7 +186,7 @@ export default function Home() {
               [text-shadow:0.8px_0.8px_0_rgba(15,23,42,.18),_-0.6px_-0.6px_0_rgba(255,255,255,.55)]
             "
                 >
-                  Substack
+                  疗愈札记
                 </h2>
                 <span className="block h-[2px] w-10 rounded brand-line-warm" />
               </div>
@@ -354,7 +362,7 @@ export default function Home() {
                 <span className="block h-[2px] w-10 rounded brand-line-warm" />
               </div>
 
-              {/* 头像 + 摘要（无头像可删除整个头像块） */}
+              {/* 头像 + 摘要 */}
               <div className="flex items-start gap-4">
                 <div
                   className="
@@ -362,10 +370,7 @@ export default function Home() {
               ring-2 ring-emerald-300/60 bg-gradient-to-tr from-emerald-100 via-sky-100 to-amber-100
             "
                   aria-hidden="true"
-                >
-                  {/* <img src="/images/avatar.jpg" alt="Francis" className="w-full h-full object-cover" /> */}
-                </div>
-
+                />
                 <p className="flex-1 text-slate-700 leading-7">
                   我是 <span className="font-medium">Francis</span>，专注于
                   <span className="font-medium">「命理 × AI × 创作」</span> 的交汇点。
@@ -375,34 +380,83 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* 社交/入口 */}
+              {/* 社交/入口 —— 已加 icon + data-analytics */}
               <div className="flex flex-wrap gap-2">
-                <Tag href="https://fatescope.substack.com">Substack</Tag>
-                <Tag href="https://instagram.com/your_photo">Photography Instagram</Tag>
-                <Tag href="https://instagram.com/your_app" >App Instagram</Tag>
-                <Tag href="https://fatescope.app" >Fatescope App</Tag>
+                <Tag
+                  href="https://fatescope.substack.com"
+                  aria-label="Open Healing Notes (Substack)"
+                  data-analytics="about.link.substack"
+                >
+                  <NotebookPen className={iconCls} />
+                  Healing Notes
+                </Tag>
+
+                <Tag
+                  href="https://instagram.com/your_photo"
+                  aria-label="Open Photography Instagram"
+                  data-analytics="about.link.ig_photo"
+                >
+                  <InstagramBrandIcon />
+                  Photography
+                </Tag>
+
+                <Tag
+                  href="https://instagram.com/your_app"
+                  aria-label="Open App Instagram"
+                  data-analytics="about.link.ig_app"
+                >
+                  <InstagramBrandIcon />
+                  App
+                </Tag>
+
+                <Tag
+                  href="https://fatescope.app"
+                  aria-label="Open Fatescope App"
+                  data-analytics="about.link.app"
+                >
+                  <Globe className={iconCls} />
+                  Fatescope App
+                </Tag>
               </div>
 
-              {/* CTA */}
+              {/* CTA —— 已加 icon + data-analytics */}
               <div className="flex flex-wrap items-center gap-3">
-                <Button href="mailto:contact@fatescope.com" variant="primary" size="sm" aria-label="给 Francis 发邮件">
+                <Button
+                  href="mailto:contact@fatescope.com"
+                  variant="primary"
+                  size="sm"
+                  aria-label="给 Francis 发邮件"
+                  data-analytics="about.cta.email_button"
+                >
+                  <Mail className="h-4 w-4 mr-2" />
                   Email
                 </Button>
-                <Button href="https://forms.gle/your-form" variant="secondary" size="sm" rel="noopener noreferrer" aria-label="填写合作表单">
+
+                <Button
+                  href="https://forms.gle/your-form"
+                  variant="secondary"
+                  size="sm"
+                  rel="noopener noreferrer"
+                  aria-label="填写合作表单"
+                  data-analytics="about.cta.collaborate_button"
+                >
+                  <NotebookPen className="h-4 w-4 mr-2" />
                   Let’s Collaborate
                 </Button>
+
                 <a
                   href="mailto:contact@fatescope.com"
                   className="inline-flex items-center gap-2 text-[15px] text-slate-600 hover:text-slate-900 underline-offset-2 hover:underline"
                   aria-label="contact@fatescope.com"
+                  data-analytics="about.cta.email_text"
                 >
-                  <span aria-hidden>📧</span>
+                  <Mail className="h-4 w-4" aria-hidden />
                   <span>contact@fatescope.com</span>
                 </a>
               </div>
             </div>
 
-            {/* 右：合作方向 + 技术栈 */}
+            {/* 右：合作方向 + 技术栈（不变） */}
             <div className="md:col-span-5 space-y-4">
               <div className="rounded-xl bg-white/50 backdrop-blur p-4 md:p-5 shadow-sm border border-black/5">
                 <h3 className="font-semibold text-slate-900">Open to</h3>
@@ -430,20 +484,105 @@ export default function Home() {
                   <Badge>Tailwind</Badge>
                   <Badge>API</Badge>
                 </div>
-                {/* 可选：当前状态/节奏 */}
-                {/* <p className="mt-3 text-[13px] text-slate-500">
-            当前接受远程协作；每周固定时间段回复合作邮件。
-          </p> */}
               </div>
             </div>
           </div>
         </GlassCard>
       </section>
 
-            {/* Footer Colophon */}
+      {/* Timeline (Past=Gray, Present=Glow, Future=Color) */}
+      <section id="timeline" className="py-12 scroll-mt-24">
+        <GlassCard tint="emerald" className="relative overflow-hidden">
+          <div className="grid md:grid-cols-12 gap-6">
+            {/* 左侧标题 */}
+            <div className="md:col-span-3">
+              <h2 className="text-[22px] md:text-[26px] font-semibold tracking-tight text-slate-900">
+                Timeline
+              </h2>
+              <span className="mt-2 block h-[2px] w-10 rounded brand-line-warm" />
+              <p className="mt-3 text-slate-600 text-[15px] leading-6">
+                一些关键节点与选择，为什么走到这里。
+              </p>
+            </div>
+
+            {/* 右侧时间线 */}
+            <div className="md:col-span-9">
+              <ol className="relative border-l border-slate-200/70 pl-8 space-y-8">
+                {[
+                  { year: "2014–2018", title: "大学阶段 · 网络安全", desc: "系统学习网络攻防与信息安全，为后续工程化与云端实践打下底层能力。" },
+                  { year: "2019", title: "开始系统化学习 CS", desc: "以 Python / Java / Shell 为主，建立工程思维与自动化意识。" },
+                  { year: "2022", title: "进入云计算与自动化", desc: "以 AWS、Terraform、容器化与 CI/CD 为核心，沉淀可复用的工程实践。" },
+                  { year: "2023", title: "启动 Side Projects", desc: "将工程栈与创作结合，探索「命理 × AI × 文字 × 摄影」的表达边界。" },
+                  { year: "2024", title: "Fatescope App 雏形", desc: "自研命理引擎 + AI 解读，强调「温柔而清晰」的指引体验。" },
+                  { year: "2025", title: "独立产品与频道上线", desc: "建立个人网站，开发独立命理引擎 Alpha 并开设疗愈文字频道。" },
+                ].map((item, idx) => {
+                  const now = new Date().getFullYear();
+                  // 解析年份：单年或“2014–2018”区间，取末尾年用于时间判断
+                  const match = String(item.year).match(/(\d{4})(?:[–-](\d{4}))?/);
+                  const start = match ? Number(match[1]) : now;
+                  const end = match && match[2] ? Number(match[2]) : start;
+
+                  let state: "past" | "present" | "future";
+                  if (end < now) state = "past";
+                  else if (start <= now && end >= now) state = "present";
+                  else state = "future";
+
+                  const dotClass =
+                    state === "past"
+                      ? "brand-dot-muted ring-1 ring-white/70 shadow-sm"
+                      : state === "present"
+                        ? "brand-line-warm ring-2 ring-white shadow-[0_0_12px_rgba(56,189,248,0.35)]"
+                        : "brand-line-warm ring-2 ring-white shadow-md";
+
+                  return (
+                    <li key={idx} className="relative pl-6 md:pl-7">
+                      {/* 渐变圆点 */}
+                      <span
+                        className={`
+                    pointer-events-none
+                    absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
+                    h-3.5 w-3.5 rounded-full ${dotClass}
+                  `}
+                      />
+                      {/* 当前年：柔和的脉动光圈（可删） */}
+                      {state === "present" && (
+                        <span
+                          className="
+                      pointer-events-none
+                      absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
+                      h-3.5 w-3.5 rounded-full
+                      animate-ping opacity-30
+                      brand-line-warm
+                    "
+                        />
+                      )}
+
+                      <time className="text-xs uppercase tracking-wider text-slate-500">
+                        {item.year}
+                      </time>
+                      <h3 className="mt-1 font-medium text-slate-900">{item.title}</h3>
+                      <p className="mt-1 text-[15px] leading-6 text-slate-700">{item.desc}</p>
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
+          </div>
+        </GlassCard>
+      </section>
+
+
+
+
+
+      {/* Terminal-style Changelog (Digest) */}
+      <TerminalChangelogDigest count={4} />
+
+      {/* Footer Colophon（单层布局） */}
       <section id="colophon" className="py-6">
         <GlassCard tint="emerald" className="relative overflow-hidden">
-          <div className="flex flex-wrap items-center gap-2 text-sm text-slate-700">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-slate-700">
+            {/* 左侧：技术栈 + GitHub */}
             <span className="text-xs uppercase tracking-wider text-slate-500">Built with</span>
             <Badge>Next.js</Badge>
             <Badge>TypeScript</Badge>
@@ -455,16 +594,22 @@ export default function Home() {
             <Badge>CI/CD</Badge>
             <span className="mx-2 text-slate-400">·</span>
             <a
-              href="https://github.com/你的仓库"  // ← 换成你的链接
+              href="https://github.com/你的仓库" // ← 换成你的链接
               className="underline decoration-slate-300 hover:text-slate-900"
-              target="_blank" rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               View on GitHub
             </a>
+
+            {/* 右侧：同一层，靠右对齐 */}
+            <nav className="ml-auto flex items-center gap-4 text-xs">
+              <a href="/changelog" className="hover:text-slate-800">Changelog</a>
+              <a href="#top" className="hover:text-slate-800" aria-label="Back to top">Back to top</a>
+            </nav>
           </div>
         </GlassCard>
       </section>
-
 
       <Lightbox images={photos} />
     </main>

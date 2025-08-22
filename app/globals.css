@@ -49,6 +49,15 @@ section { scroll-margin-top: 4.5rem; }
   background: linear-gradient(90deg,#22d3ee 0%,#60a5fa 55%,#818cf8 100%);
 }
 
+/* 过去节点：柔和灰阶径向渐变 */
+/* 过去节点：更清晰的灰阶渐变 + 阴影 */
+.brand-dot-muted {
+  background: radial-gradient(circle at 40% 40%, #9ca3af 0%, #d1d5db 60%, #f9fafb 100%);
+  box-shadow: 0 0 4px rgba(156, 163, 175, 0.4); /* slate-400 阴影 */
+}
+
+
+
 /* 轻微漂浮（幅度更大；持续进行） */
 @keyframes feather-float {
   0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
@@ -75,3 +84,17 @@ section { scroll-margin-top: 4.5rem; }
   50%     { transform: translate3d(0,-10px,0) rotate(-2.6deg); }
 }
 
+@keyframes glow {
+  0%,100% { opacity: .10; transform: scale(1); }
+  50%     { opacity: .22; transform: scale(1.03); }
+}
+
+@keyframes glowSoft {
+  0%, 100% { opacity: .18; transform: scale(1); }
+  50%      { opacity: .32; transform: scale(1.04); }
+}
+
+@keyframes glowStrong {
+  0%, 100% { opacity: .22; transform: scale(1); }
+  50%      { opacity: .45; transform: scale(1.07); }
+}
