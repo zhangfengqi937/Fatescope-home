@@ -7,6 +7,7 @@ import Button from "@/components/Button";
 import Image from "next/image";
 import { Tag } from "@/components/Tag";
 import { Badge } from "@/components/Badge";
+import TerminalChangelogDigest from "@/components/TerminalChangelogDigest";
 
 const photos = [
   "/images/01.jpg", "/images/02.jpg", "/images/03.jpg", "/images/04.jpg",
@@ -175,8 +176,7 @@ export default function HomeEn() {
                 >
                   Healing Notes
                 </h2>
-                <span className="block h-[2px] w-10 rounded brand-line-warm" />
-              </div>
+                <span className="mt-2 block h-[2px] w-10 rounded brand-line-cool" />              </div>
 
               <p className="text-base md:text-lg text-slate-700 leading-8">
                 For those who feel lost at life’s crossroads.
@@ -350,7 +350,7 @@ export default function HomeEn() {
                 >
                   About & Collaborations
                 </h2>
-                <span className="block h-[2px] w-10 rounded brand-line-warm" />
+                <span className="mt-2 block h-[2px] w-10 rounded brand-line-cool" />
               </div>
 
               {/* 头像 + 摘要（无头像可删除整个头像块） */}
@@ -439,10 +439,99 @@ export default function HomeEn() {
         </GlassCard>
       </section>
 
-      {/* Footer Colophon */}
+      {/* Timeline (Past=Gray, Present=Glow, Future=Color) */}
+      <section id="timeline" className="py-12 scroll-mt-24">
+        <GlassCard tint="emerald" className="relative overflow-hidden">
+          <div className="grid md:grid-cols-12 gap-6">
+            {/* 左侧标题 */}
+            <div className="md:col-span-3">
+              <h2 className="text-[22px] md:text-[26px] font-semibold tracking-tight text-slate-900">
+                Timeline
+              </h2>
+              <span className="mt-2 block h-[2px] w-10 rounded brand-line-cool" />
+              <p className="mt-3 text-slate-600 text-[15px] leading-6">
+                一些关键节点与选择，为什么走到这里。
+              </p>
+            </div>
+
+            {/* 右侧时间线 */}
+            <div className="md:col-span-9">
+              <ol className="relative border-l border-slate-200/70 pl-8 space-y-8">
+                {[
+                  { year: "2014–2018", title: "大学阶段 · 网络安全", desc: "系统学习网络攻防与信息安全，为后续工程化与云端实践打下底层能力。" },
+                  { year: "2019", title: "开始系统化学习 CS", desc: "以 Python / Java / Shell 为主，建立工程思维与自动化意识。" },
+                  { year: "2022", title: "进入云计算与自动化", desc: "以 AWS、Terraform、容器化与 CI/CD 为核心，沉淀可复用的工程实践。" },
+                  { year: "2023", title: "启动 Side Projects", desc: "将工程栈与创作结合，探索「命理 × AI × 文字 × 摄影」的表达边界。" },
+                  { year: "2024", title: "Fatescope App 雏形", desc: "自研命理引擎 + AI 解读，强调「温柔而清晰」的指引体验。" },
+                  { year: "2025", title: "独立产品与频道上线", desc: "建立个人网站，开发独立命理引擎 Alpha 并开设疗愈文字频道。" },
+                ].map((item, idx) => {
+                  const now = new Date().getFullYear();
+                  // 解析年份：单年或“2014–2018”区间，取末尾年用于时间判断
+                  const match = String(item.year).match(/(\d{4})(?:[–-](\d{4}))?/);
+                  const start = match ? Number(match[1]) : now;
+                  const end = match && match[2] ? Number(match[2]) : start;
+
+                  let state: "past" | "present" | "future";
+                  if (end < now) state = "past";
+                  else if (start <= now && end >= now) state = "present";
+                  else state = "future";
+
+                  const dotClass =
+                    state === "past"
+                      ? "brand-dot-muted ring-1 ring-white/70 shadow-sm"
+                      : state === "present"
+                        ? "brand-line-warm ring-2 ring-white shadow-[0_0_12px_rgba(56,189,248,0.35)]"
+                        : "brand-line-warm ring-2 ring-white shadow-md";
+
+                  return (
+                    <li key={idx} className="relative pl-6 md:pl-7">
+                      {/* 渐变圆点 */}
+                      <span
+                        className={`
+                    pointer-events-none
+                    absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
+                    h-3.5 w-3.5 rounded-full ${dotClass}
+                  `}
+                      />
+                      {/* 当前年：柔和的脉动光圈（可删） */}
+                      {state === "present" && (
+                        <span
+                          className="
+                      pointer-events-none
+                      absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
+                      h-3.5 w-3.5 rounded-full
+                      animate-ping opacity-30
+                      brand-line-cool
+                    "
+                        />
+                      )}
+
+                      <time className="text-xs uppercase tracking-wider text-slate-500">
+                        {item.year}
+                      </time>
+                      <h3 className="mt-1 font-medium text-slate-900">{item.title}</h3>
+                      <p className="mt-1 text-[15px] leading-6 text-slate-700">{item.desc}</p>
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
+          </div>
+        </GlassCard>
+      </section>
+
+
+
+
+
+      {/* Terminal-style Changelog (Digest) */}
+      <TerminalChangelogDigest count={4} />
+
+      {/* Footer Colophon（单层布局） */}
       <section id="colophon" className="py-6">
-        <GlassCard tint="sky" className="relative overflow-hidden">
-          <div className="flex flex-wrap items-center gap-2 text-sm text-slate-700">
+        <GlassCard tint="emerald" className="relative overflow-hidden">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-slate-700">
+            {/* 左侧：技术栈 + GitHub */}
             <span className="text-xs uppercase tracking-wider text-slate-500">Built with</span>
             <Badge>Next.js</Badge>
             <Badge>TypeScript</Badge>
@@ -454,12 +543,19 @@ export default function HomeEn() {
             <Badge>CI/CD</Badge>
             <span className="mx-2 text-slate-400">·</span>
             <a
-              href="https://github.com/你的仓库"  // ← 换成你的链接
+              href="https://github.com/你的仓库" // ← 换成你的链接
               className="underline decoration-slate-300 hover:text-slate-900"
-              target="_blank" rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               View on GitHub
             </a>
+
+            {/* 右侧：同一层，靠右对齐 */}
+            <nav className="ml-auto flex items-center gap-4 text-xs">
+              <a href="/changelog" className="hover:text-slate-800">Changelog</a>
+              <a href="#top" className="hover:text-slate-800" aria-label="Back to top">Back to top</a>
+            </nav>
           </div>
         </GlassCard>
       </section>

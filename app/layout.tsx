@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* 1) 全站背景（fixed，z-0） */}
         <PhoenixGlobalBg
           imageSrc="/images/phoenix-bg-3.png"
-          imageOpacity={0.35}
+          imageOpacity={0.5}
           imageAnchor="center-right"
           strongMask={false}
           fadeLeft
@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             className="
       absolute left-10 top-10        /* 先放到可见区域，避免负偏移看不到 */
       w-[420px] md:w-[520px]
-      opacity-80                      /* 提高透明度，先确保看得到 */
+      opacity-70                      /* 提高透明度，先确保看得到 */
     "
           />
         </div>
