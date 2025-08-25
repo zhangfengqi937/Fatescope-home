@@ -11,12 +11,14 @@ const SECTIONS = [
   { id: 'gallery',  label: 'Photos' },
   { id: 'substack', label: 'Substack' },
   { id: 'about',    label: 'About' },
+  { id: 'timeline', label: 'Timeline' }, 
 ];
 
 // 你的 GitHub 链接
 const GITHUB_LINKS = [
   { href: 'https://github.com/zhangfengqi937/fatescope-home', label: 'Homepage Repo' },
   { href: 'https://github.com/zhangfengqi937/fatescope-app-docs', label: 'Fatescope Docs' },
+  { href: '/changelog', label: 'Change Log' }, 
 ];
 
 export default function Header() {

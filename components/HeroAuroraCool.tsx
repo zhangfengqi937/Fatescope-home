@@ -123,19 +123,21 @@ export default function HeroAuroraCool() {
         <div className="mt-2 h-1.5 w-28 rounded-full bg-gradient-to-r from-sky-400 via-cyan-400 to-indigo-400" />
 
         <p className="mt-4 text-lg md:text-xl text-slate-700 max-w-3xl en-leading">
-          Photography · Writing · Fatescope App — Cloud + AI + Independent Astrology algorithms for kinder guidance.
-        </p>
+          Photography · Writing · Fatescope App — Cloud + AI × Independent Astrology × Psychology & Philosophy × Spirituality, guiding healing and clarity in creation.        </p>
 
         {/* 冷色 chip */}
         <div className="mt-5 flex flex-wrap gap-2 text-sm md:text-base">
           <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-sky-200 text-slate-700 text-[14px] font-medium">
-            Independent Astrology Engine
+            Astrology Engine
           </span>
           <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-sky-200 text-slate-700 text-[14px] font-medium">
-            Cloud + AI
+            Cloud × AI
           </span>
           <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-sky-200 text-slate-700 text-[14px] font-medium">
             Healing & Guidance
+          </span>
+          <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-sky-200 text-slate-700 text-[14px] font-medium">
+            Spiritual & Creation
           </span>
         </div>
 

@@ -21,7 +21,7 @@ const photos = [
   "/images/01.jpg", "/images/02.jpg", "/images/03.jpg", "/images/04.jpg",
   "/images/05.jpg", "/images/06.jpg", "/images/07.jpg", "/images/08.jpg",
   "/images/09.jpg", "/images/10.jpg", "/images/11.jpg", "/images/12.jpg",
-  "/images/13.jpg", "/images/14.jpg",
+  "/images/13.jpg", "/images/14.jpg", "/images/15.jpg", "/images/16.jpg",
 ];
 
 export default function Home() {
@@ -45,17 +45,38 @@ export default function Home() {
               </h2>
               <span className="block h-[2px] w-10 rounded brand-line-warm" />
             </div>
-
             <p className="text-base md:text-lg text-slate-700 leading-8">
-              独立命理引擎 × AI 解读。不仅是答案，而是一张属于你的 人生地图。更细的时间 / 方位 / 事件线提示，
-              帮助你在关键时刻听见自己更清晰的声音。
+              你的人生地图 × 灵魂故事 × 私人运势。
+              不仅是命理工具，而是陪伴你走过关键时刻的智慧之光。
             </p>
 
+
+            {/* 技术基石 */}
+            <h6 className="mt-6 text-[15px] font-medium text-slate-800">技术基石</h6>
             <ul className="text-base text-slate-700 list-disc ml-5 space-y-2 leading-7">
-              <li>自研引擎 × 智能解读 —— 从零构建，只为更懂你（持续打磨）</li>
-              <li>事件线指引 —— 在迷茫时给你看见路径的光</li>
+              <li>自研命理引擎 × 智能解读 —— 从零构建，只为更懂你（持续打磨）</li>
               <li>云端架构 —— 稳定、安全、持续进化（AWS / Terraform / 容器化 / CI/CD）</li>
             </ul>
+
+            {/* 已上线功能 */}
+            <h6 className="mt-4 text-[15px] font-medium text-slate-800">已上线功能</h6>
+            <ul className="text-base text-slate-700 list-disc ml-5 space-y-2 leading-7">
+              <li>占卜 —— 按时间占卜特定事件，让选择不再孤单</li>
+            </ul>
+
+            {/* Coming Soon */}
+            <h6 className="text-[15px] font-medium text-slate-800 mb-2 flex items-center gap-2">
+              <span className="text-amber-500 text-lg">⏳</span>
+              Coming Soon
+            </h6>
+            <ul className="text-base text-slate-700 list-disc ml-5 space-y-2 leading-7">
+              <li>灵魂故事 —— 生成你的前世今生剧本，以及与你人的灵魂羁绊</li>
+              <li>私人运势报告 —— 定制阶段性趋势与方向</li>
+              <li>人生蓝图 —— 人生使命、整体运势与核心课题指引</li>
+              <li>流年 / 流月 / 流日运势 —— 洞察关键节点</li>
+              <li>一对一深度解盘 —— 计划中的高级私人服务，提供更详细的个性化解读</li>
+            </ul>
+
 
             <div className="pt-2 space-y-2">
               <h6 className="text-[16px] md:text-[18px] font-medium tracking-wide text-slate-700
@@ -82,63 +103,35 @@ export default function Home() {
           </div>
 
           {/* 右列：图形 25%（移动端下沉居中；桌面端与左侧垂直居中对齐） */}
-          <div className="md:col-span-1 mt-8 md:mt-0 self-center md:self-auto flex flex-col items-center md:items-end">
-            <svg
-              viewBox="0 0 240 240"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Cosmic mission glyph"
-              className="w-44 h-44 md:w-52 md:h-52 drop-shadow-sm"
-            >
-              <defs>
-                <radialGradient id="nebula" cx="50%" cy="45%" r="60%">
-                  <stop offset="0%" stopColor="#a7f3d0" stopOpacity="0.95" />
-                  <stop offset="45%" stopColor="#60a5fa" stopOpacity="0.55" />
-                  <stop offset="100%" stopColor="#0ea5e9" stopOpacity="0.15" />
-                </radialGradient>
-                <linearGradient id="orbitStroke" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#34d399" />
-                  <stop offset="50%" stopColor="#60a5fa" />
-                  <stop offset="100%" stopColor="#fbbf24" />
-                </linearGradient>
-                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="2.2" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-                <symbol id="star" viewBox="0 0 20 20">
-                  <path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="white" />
-                </symbol>
-              </defs>
+          <div className="md:col-span-1 mt-8 md:mt-0 flex justify-center md:justify-end">
+            <div className="w-48 md:w-72 lg:w-[32rem] md:pr-2">
+              <div className="fs-halo relative aspect-square w-full">
+                <Image
+                  src="/images/compass.png"
+                  alt="Compass for inner direction"
+                  fill
+                  priority
+                  sizes="(min-width:1280px) 32rem, (min-width:768px) 18rem, 12rem"
+                  className="
+          object-contain opacity-95 brightness-110 contrast-110
+          drop-shadow-[0_6px_18px_rgba(56,189,248,.25)]
+          fs-glow-spin
+          relative z-[1]
+        "
+                  draggable={false}
+                />
+              </div>
 
-              <g filter="url(#glow)">
-                <ellipse cx="120" cy="120" rx="82" ry="70" fill="url(#nebula)" />
-              </g>
-              <g opacity="0.45">
-                <ellipse cx="120" cy="120" rx="92" ry="58" fill="none" stroke="url(#orbitStroke)" strokeWidth="1.2" />
-                <ellipse cx="120" cy="120" rx="66" ry="40" fill="none" stroke="url(#orbitStroke)" strokeWidth="1.1" />
-              </g>
-              <path
-                d="M120,120 m0,-70 a70,70 0 1,1 -70,70 c0,24 19,43 43,43 c24,0 43,-19 43,-43 c0,-16 -13,-29 -29,-29 c-16,0 -29,13 -29,29 c0,10 8,18 18,18"
-                fill="none" stroke="url(#orbitStroke)" strokeWidth="2" strokeLinecap="round" opacity="0.85" filter="url(#glow)"
-              />
-              <use href="#star" x="58" y="68" width="8" height="8" opacity="0.9" />
-              <use href="#star" x="182" y="94" width="6" height="6" opacity="0.8" />
-              <use href="#star" x="150" y="168" width="7" height="7" opacity="0.85" />
-              <circle cx="95" cy="170" r="2.2" fill="#fff" opacity="0.9" />
-              <circle cx="200" cy="130" r="1.8" fill="#fff" opacity="0.8" />
-            </svg>
-
-            <p className="mt-2 text-slate-600 italic text-sm md:text-base text-center md:text-center">
-              在命运的分岔口，提供一盏灯
-            </p>
+              <p className="mt-2 w-full text-slate-600 italic text-sm md:text-base text-center md:text-right leading-relaxed">
+                在命运的分岔口，提供一盏灯
+              </p>
+            </div>
           </div>
+
+
+
         </GlassCard>
       </section>
-
-
 
       {/* Gallery */}
       <section id="gallery" className="py-10 scroll-mt-24">
@@ -156,15 +149,18 @@ export default function Home() {
             <span className="mt-2 block h-[2px] w-10 rounded brand-line-warm" />
           </div>
 
-          {/* 右侧“View all” */}
+          {/* 右侧“View on Glass” */}
           <a
-            href="/photos"
-            aria-label="View all photos"
+            href="https://glass.photo/francisz937"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View on Glass"
             className="inline-flex items-center gap-1 text-sm font-medium text-slate-600
-                 hover:text-slate-900 hover:underline focus-visible:outline-none
-                 focus-visible:ring-2 focus-visible:ring-emerald-400/50 rounded"
+             hover:text-slate-900 hover:underline focus-visible:outline-none
+             focus-visible:ring-2 focus-visible:ring-emerald-400/50 rounded"
           >
-            View all <span aria-hidden>→</span>
+            <Camera className="w-4 h-4 opacity-70" />
+            View Full Collection on Glass <span aria-hidden>→</span>
           </a>
         </div>
 
@@ -217,9 +213,10 @@ export default function Home() {
 
               {/* 标签 */}
               <div className="flex flex-wrap gap-2 text-sm md:text-base">
-                <Button as="span" variant="tag" size="sm">Healing</Button>
-                <Button as="span" variant="tag" size="sm">Spirituality</Button>
-                <Button as="span" variant="tag" size="sm">Kind Guidance</Button>
+                <Button as="span" variant="tag" size="sm">疗愈</Button>
+                <Button as="span" variant="tag" size="sm">灵性对话</Button>
+                <Button as="span" variant="tag" size="sm">灵性与科学</Button>
+                <Button as="span" variant="tag" size="sm">人生洞察</Button>
               </div>
 
               {/* CTA 按钮 */}
@@ -371,13 +368,21 @@ export default function Home() {
             "
                   aria-hidden="true"
                 />
-                <p className="flex-1 text-slate-700 leading-7">
-                  我是 <span className="font-medium">Francis</span>，专注于
-                  <span className="font-medium">「命理 × AI × 创作」</span> 的交汇点。
-                  曾深耕云计算与自动化（AWS / Terraform / 容器化 / CI/CD），
-                  现在在构建 <span className="font-medium">独立命理引擎 + AI 解读</span>。
-                  我希望用 <span className="font-medium">温柔而清晰</span> 的方式，帮助你在关键节点看见自己，做出对齐灵魂的选择。
-                </p>
+                <div className="flex-1 text-slate-700 leading-7 space-y-3 break-words">
+                  <p>我是 <span className="font-medium">Francis</span>，专注结合
+                    <span className="font-medium">「命理 × 科技 × 创作 × 疗愈」</span>
+                  </p>
+                  <p>
+                    曾深耕云计算与自动化（AWS / Terraform / 容器化 / CI/CD），
+                    并探索哲学与心理学，以理解人性与灵魂的深层结构。
+                  </p>
+                  <p>现在正构建 <span className="font-medium">独立命理引擎 + 智能解读</span>。</p>
+                  <p>我希望以 <span className="font-medium">温柔而清晰</span> 的方式，
+                    陪伴你在关键节点，看见真实的自己，并做出与灵魂频率对齐的选择。
+                  </p>
+                </div>
+
+
               </div>
 
               {/* 社交/入口 —— 已加 icon + data-analytics */}
@@ -392,7 +397,7 @@ export default function Home() {
                 </Tag>
 
                 <Tag
-                  href="https://instagram.com/your_photo"
+                  href="https://www.instagram.com/nebula.heartbeats/"
                   aria-label="Open Photography Instagram"
                   data-analytics="about.link.ig_photo"
                 >
@@ -401,7 +406,7 @@ export default function Home() {
                 </Tag>
 
                 <Tag
-                  href="https://instagram.com/your_app"
+                  href="https://www.instagram.com/fatescope.app/"
                   aria-label="Open App Instagram"
                   data-analytics="about.link.ig_app"
                 >
@@ -464,7 +469,7 @@ export default function Home() {
                   <li>• 命理 / 灵性相关应用与工具（独立引擎 + 智能解读）</li>
                   <li>• 云端部署与工程化（AWS / Terraform / CI/CD / 容器化）</li>
                   <li>• 文字 × 摄影 × 疗愈主题的内容共创</li>
-                  <li>• 技术与艺术结合的跨界项目</li>
+                  <li>• 技术 × 艺术 × 灵性 的跨界探索</li>
                 </ul>
               </div>
 
@@ -500,24 +505,80 @@ export default function Home() {
                 Timeline
               </h2>
               <span className="mt-2 block h-[2px] w-10 rounded brand-line-warm" />
+
+              {/* 简介 */}
               <p className="mt-3 text-slate-600 text-[15px] leading-6">
                 一些关键节点与选择，为什么走到这里。
               </p>
+
+              {/* 标签说明 */}
+              <p className="mt-6 text-slate-600 text-[14px] leading-6">
+                <span className="inline-block w-2 h-2 rounded-full bg-sky-400 mr-2"></span>
+                <strong>Tech</strong> 技术学习与工程化<br />
+                <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>
+                <strong>Healing</strong> 疗愈、文字与摄影表达<br />
+                <span className="inline-block w-2 h-2 rounded-full bg-violet-400 mr-2"></span>
+                <strong>Spirituality</strong> 灵性、命理与自我探索<br />
+                <span className="inline-block w-2 h-2 rounded-full bg-amber-400 mr-2"></span>
+                <strong>Crossover</strong> 跨界融合与表达
+              </p>
+
+              {/* 一句话愿景 */}
+              <p className="mt-6 italic text-slate-500 text-[14px] leading-6">
+                “探索技术与灵性如何交汇，把工程思维转化为疗愈与创造。”
+              </p>
+            </div>
+
+            {/* Guiding Lantern — frosted + yellow glow + subtle breathing */}
+            <div
+              aria-hidden
+              className="
+    pointer-events-none select-none
+    absolute bottom-6 left-2 z-[1]
+    w-[120px] md:w-[200px] lg:w-[300px]
+  "
+            >
+              <div className="relative opacity-80">
+                {/* 黄色光晕：呼吸 */}
+                <div
+                  className="
+        absolute inset-[-18%] rounded-full blur-[28px]
+        bg-[radial-gradient(50%_50%_at_50%_60%,rgba(251,191,36,0.45)_0%,rgba(251,191,36,0)_80%)]
+        mix-blend-screen
+        motion-safe:animate-[lantern-glow_6.5s_ease-in-out_infinite]
+      "
+                />
+
+                {/* 灯主体：磨砂+轻微呼吸 */}
+                <img
+                  src="/images/lantern.png"
+                  alt=""
+                  className="
+        w-full mix-blend-soft-light relative z-10
+        [filter:saturate(.78)_contrast(.95)_blur(.4px)]
+        [mask-image:radial-gradient(115%_115%_at_50%_55%,#000_70%,transparent_100%)]
+        [mask-mode:alpha]
+        motion-safe:animate-[lantern-breathe_5.8s_ease-in-out_infinite]
+      "
+                />
+              </div>
             </div>
 
             {/* 右侧时间线 */}
             <div className="md:col-span-9">
               <ol className="relative border-l border-slate-200/70 pl-8 space-y-8">
                 {[
-                  { year: "2014–2018", title: "大学阶段 · 网络安全", desc: "系统学习网络攻防与信息安全，为后续工程化与云端实践打下底层能力。" },
-                  { year: "2019", title: "开始系统化学习 CS", desc: "以 Python / Java / Shell 为主，建立工程思维与自动化意识。" },
-                  { year: "2022", title: "进入云计算与自动化", desc: "以 AWS、Terraform、容器化与 CI/CD 为核心，沉淀可复用的工程实践。" },
-                  { year: "2023", title: "启动 Side Projects", desc: "将工程栈与创作结合，探索「命理 × AI × 文字 × 摄影」的表达边界。" },
-                  { year: "2024", title: "Fatescope App 雏形", desc: "自研命理引擎 + AI 解读，强调「温柔而清晰」的指引体验。" },
-                  { year: "2025", title: "独立产品与频道上线", desc: "建立个人网站，开发独立命理引擎 Alpha 并开设疗愈文字频道。" },
+                  { year: "2014–2018", title: "大学阶段 · 网络安全", desc: "系统学习网络攻防与信息安全，为后续工程化与云端实践打下底层能力。", kind: "tech" },
+                  { year: "2019", title: "开始系统化学习 CS", desc: "以 Python / Java / Shell 为主，建立工程思维与自动化意识。", kind: "tech" },
+                  { year: "2020", title: "探索中西方命理基础", desc: "结合命理、心理学与哲学，构建独立的人生理解体系。", kind: "spiritual" },
+                  { year: "2021", title: "技术与方向沉淀", desc: "并行学习计算机与命理，开始思考二者如何融合。", kind: "crossover" },
+                  { year: "2022", title: "进入云计算与自动化", desc: "以 AWS、Terraform、容器化与 CI/CD 为核心，沉淀可复用的工程实践。", kind: "tech" },
+                  { year: "2023", title: "启动 Side Projects", desc: "将工程栈与创作结合，探索「命理 × AI × 文字 × 摄影」的表达边界，逐步面向疗愈与自我反思。", kind: "crossover" },
+                  { year: "2024", title: "Fatescope App 雏形", desc: "自研命理引擎 + AI 解读，提出「温柔而清晰」的指引理念，并与疗愈文字结合。", kind: "crossover" },
+                  { year: "2025", title: "独立产品与频道上线", desc: "建立个人网站，发布独立混合命理引擎 Alpha，并开设疗愈文字与摄影频道。", kind: "healing" },
+                  { year: "未来", title: "持续探索", desc: "在「技术 × 灵性 × 创作 × 疗愈」的交汇点上，构建更广阔的共鸣与指引系统。", kind: "crossover" },
                 ].map((item, idx) => {
                   const now = new Date().getFullYear();
-                  // 解析年份：单年或“2014–2018”区间，取末尾年用于时间判断
                   const match = String(item.year).match(/(\d{4})(?:[–-](\d{4}))?/);
                   const start = match ? Number(match[1]) : now;
                   const end = match && match[2] ? Number(match[2]) : start;
@@ -534,38 +595,50 @@ export default function Home() {
                         ? "brand-line-warm ring-2 ring-white shadow-[0_0_12px_rgba(56,189,248,0.35)]"
                         : "brand-line-warm ring-2 ring-white shadow-md";
 
+                  const label =
+                    item.kind === "tech"
+                      ? "Tech"
+                      : item.kind === "healing"
+                        ? "Healing"
+                        : item.kind === "spiritual"
+                          ? "Spirituality"
+                          : "Crossover";
+
                   return (
                     <li key={idx} className="relative pl-6 md:pl-7">
-                      {/* 渐变圆点 */}
+                      {/* 灰系时间点（保留原风格） */}
                       <span
                         className={`
-                    pointer-events-none
-                    absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
-                    h-3.5 w-3.5 rounded-full ${dotClass}
-                  `}
+            pointer-events-none absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
+            h-3.5 w-3.5 rounded-full ${dotClass}
+          `}
                       />
-                      {/* 当前年：柔和的脉动光圈（可删） */}
                       {state === "present" && (
                         <span
-                          className="
-                      pointer-events-none
-                      absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
-                      h-3.5 w-3.5 rounded-full
-                      animate-ping opacity-30
-                      brand-line-warm
-                    "
+                          className="pointer-events-none absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
+                       h-3.5 w-3.5 rounded-full animate-ping opacity-30 brand-line-warm"
                         />
                       )}
 
-                      <time className="text-xs uppercase tracking-wider text-slate-500">
+                      <time className="block text-xs uppercase tracking-wider text-slate-500 mb-1">
                         {item.year}
                       </time>
-                      <h3 className="mt-1 font-medium text-slate-900">{item.title}</h3>
+
+                      {/* 标题 + 灰色标签 */}
+                      <h3 className="mt-1 font-medium text-slate-900 inline-flex items-center gap-2">
+                        {item.title}
+                        <span className="text-[11px] px-1.5 py-0.5 rounded-full border border-slate-300 text-slate-600 bg-slate-50">
+                          {label}
+                        </span>
+                      </h3>
+
                       <p className="mt-1 text-[15px] leading-6 text-slate-700">{item.desc}</p>
                     </li>
                   );
                 })}
               </ol>
+
+
             </div>
           </div>
         </GlassCard>

@@ -9,11 +9,17 @@ import { Tag } from "@/components/Tag";
 import { Badge } from "@/components/Badge";
 import TerminalChangelogDigest from "@/components/TerminalChangelogDigest";
 
+import { NotebookPen, Camera, AppWindow, Globe, Mail } from "lucide-react";
+import InstagramBrandIcon from "@/components/InstagramBrandIcon";
+
+const iconCls = "h-4 w-4 mr-1.5 translate-y-[1px] opacity-80";
+
+
 const photos = [
   "/images/01.jpg", "/images/02.jpg", "/images/03.jpg", "/images/04.jpg",
   "/images/05.jpg", "/images/06.jpg", "/images/07.jpg", "/images/08.jpg",
   "/images/09.jpg", "/images/10.jpg", "/images/11.jpg", "/images/12.jpg",
-  "/images/13.jpg", "/images/14.jpg",
+  "/images/13.jpg", "/images/14.jpg", "/images/15.jpg", "/images/16.jpg",
 ];
 
 export default function HomeEn() {
@@ -39,14 +45,34 @@ export default function HomeEn() {
             </div>
 
             <p className="text-base md:text-lg text-slate-700 leading-8">
-              Independent Hybrid astrology algorithms (East × West) Engine × AI Insight. Not just answers, but a personal life map.
-              Detailed timing, directions, and event-line guidance—helping you hear your own voice more clearly at decisive moments.
+              Independent Hybrid astrology algorithms (East × West) Engine × AI Insight. Your life map × soul guidance × personal destiny.
+              Not just astrology, but a light of wisdom that stays with you through every turning point.
             </p>
 
+            {/* Technology Foundation */}
+            <h6 className="mt-6 text-[15px] font-medium text-slate-800">Technology Foundation</h6>
             <ul className="text-base text-slate-700 list-disc ml-5 space-y-2 leading-7">
-              <li>Built-from-scratch engine × Intelligent interpretation — crafted from zero, continually refined to truly understand you.</li>
-              <li>Event-line guidance — light on the path when you feel lost.</li>
-              <li>Cloud architecture — stable, secure, and ever-evolving (AWS / Terraform / containerization / CI/CD).</li>
+              <li>Independent Engine × Guided Interpretation — Built from the ground up, continuously refined for clarity and depth</li>
+              <li>Cloud Architecture — Stable, secure, and evolving with AWS, Terraform, containerization, and CI/CD</li>
+            </ul>
+
+            {/* Current Feature */}
+            <h6 className="mt-4 text-[15px] font-medium text-slate-800">Available Now</h6>
+            <ul className="text-base text-slate-700 list-disc ml-5 space-y-2 leading-7">
+              <li>Divination — Timely readings for specific questions, offering clarity and reassurance in key decisions</li>
+            </ul>
+
+            {/* Coming Soon */}
+            <h6 className="text-[15px] font-medium text-slate-800 mb-2 flex items-center gap-2">
+              <span className="text-amber-500 text-lg">⏳</span>
+              Coming Soon
+            </h6>
+            <ul className="text-base text-slate-700 list-disc ml-5 space-y-2 leading-7">
+              <li>Soul Stories — Narratives of past and present lives, and the unseen connections that shape your path</li>
+              <li>Personal Forecast — Customized trends and directions to help you navigate each stage of life</li>
+              <li>Life Blueprint — Guidance on your mission, overall destiny, and the lessons written into your script</li>
+              <li>Annual / Monthly / Daily Flow — Insights into turning points and cycles of change</li>
+              <li>One-on-One Deep Reading — Planned premium service for personalized, in-depth guidance</li>
             </ul>
 
             <div className="pt-2 space-y-2">
@@ -73,58 +99,29 @@ export default function HomeEn() {
           </div>
 
           {/* 右列：图形 25%（移动端下沉居中；桌面端与左侧垂直居中对齐） */}
-          <div className="md:col-span-1 mt-8 md:mt-0 self-center md:self-auto flex flex-col items-center md:items-end">
-            <svg
-              viewBox="0 0 240 240"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Cosmic mission glyph"
-              className="w-44 h-44 md:w-52 md:h-52 drop-shadow-sm"
-            >
-              <defs>
-                <radialGradient id="nebula" cx="50%" cy="45%" r="60%">
-                  <stop offset="0%" stopColor="#a7f3d0" stopOpacity="0.95" />
-                  <stop offset="45%" stopColor="#60a5fa" stopOpacity="0.55" />
-                  <stop offset="100%" stopColor="#0ea5e9" stopOpacity="0.15" />
-                </radialGradient>
-                <linearGradient id="orbitStroke" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#34d399" />
-                  <stop offset="50%" stopColor="#60a5fa" />
-                  <stop offset="100%" stopColor="#fbbf24" />
-                </linearGradient>
-                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="2.2" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-                <symbol id="star" viewBox="0 0 20 20">
-                  <path d="M10 0 L12 8 L20 10 L12 12 L10 20 L8 12 L0 10 L8 8 Z" fill="white" />
-                </symbol>
-              </defs>
+          <div className="md:col-span-1 mt-8 md:mt-0 flex justify-center md:justify-end">
+            <div className="w-48 md:w-72 lg:w-[32rem] md:pr-2">
+              <div className="fs-halo relative aspect-square w-full">
+                <Image
+                  src="/images/compass.png"
+                  alt="Compass for inner direction"
+                  fill
+                  priority
+                  sizes="(min-width:1280px) 32rem, (min-width:768px) 18rem, 12rem"
+                  className="
+          object-contain opacity-95 brightness-110 contrast-110
+          drop-shadow-[0_6px_18px_rgba(56,189,248,.25)]
+          fs-glow-spin
+          relative z-[1]
+        "
+                  draggable={false}
+                />
+              </div>
 
-              <g filter="url(#glow)">
-                <ellipse cx="120" cy="120" rx="82" ry="70" fill="url(#nebula)" />
-              </g>
-              <g opacity="0.45">
-                <ellipse cx="120" cy="120" rx="92" ry="58" fill="none" stroke="url(#orbitStroke)" strokeWidth="1.2" />
-                <ellipse cx="120" cy="120" rx="66" ry="40" fill="none" stroke="url(#orbitStroke)" strokeWidth="1.1" />
-              </g>
-              <path
-                d="M120,120 m0,-70 a70,70 0 1,1 -70,70 c0,24 19,43 43,43 c24,0 43,-19 43,-43 c0,-16 -13,-29 -29,-29 c-16,0 -29,13 -29,29 c0,10 8,18 18,18"
-                fill="none" stroke="url(#orbitStroke)" strokeWidth="2" strokeLinecap="round" opacity="0.85" filter="url(#glow)"
-              />
-              <use href="#star" x="58" y="68" width="8" height="8" opacity="0.9" />
-              <use href="#star" x="182" y="94" width="6" height="6" opacity="0.8" />
-              <use href="#star" x="150" y="168" width="7" height="7" opacity="0.85" />
-              <circle cx="95" cy="170" r="2.2" fill="#fff" opacity="0.9" />
-              <circle cx="200" cy="130" r="1.8" fill="#fff" opacity="0.8" />
-            </svg>
-
-            <p className="mt-2 text-slate-600 italic text-sm md:text-base text-center md:text-center">
-              Lighting the way at life’s crossroads
-            </p>
+              <p className="mt-2 text-slate-600 italic text-sm md:text-base text-center md:text-center">
+                Lighting the way at life’s crossroads
+              </p>
+            </div>
           </div>
         </GlassCard>
       </section>
@@ -144,15 +141,18 @@ export default function HomeEn() {
             </h2>
             <span className="mt-2 block h-[2px] w-10 rounded brand-line-cool" />          </div>
 
-          {/* 右侧“View all” */}
+          {/* 右侧“View on Glass” */}
           <a
-            href="/photos"
-            aria-label="View all photos"
-            className="inline-flex items-center gap-1 text-sm font-medium text-slate-600
-                       hover:text-slate-900 hover:underline focus-visible:outline-none
-                       focus-visible:ring-2 focus-visible:ring-emerald-400/50 rounded"
+            href="https://glass.photo/你的Glass用户名"   // ← 换成你的Glass主页
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View on Glass"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600
+             hover:text-slate-900 hover:underline focus-visible:outline-none
+             focus-visible:ring-2 focus-visible:ring-emerald-400/50 rounded"
           >
-            View all <span aria-hidden>→</span>
+            <Camera className="w-4 h-4 opacity-70" />
+            View Full Collection on Glass <span aria-hidden>→</span>
           </a>
         </div>
 
@@ -364,38 +364,107 @@ export default function HomeEn() {
                 >
                   {/* <img src="/images/avatar.jpg" alt="Francis" className="w-full h-full object-cover" /> */}
                 </div>
+                <div className="flex-1 text-slate-700 leading-7 space-y-4">
+                  <p>
+                    I'm <span className="font-medium">Francis</span>, focusing on the intersection of
+                    <span className="font-medium"> “Metaphysics × Technology × Creation × Healing”</span>.
+                  </p>
 
-                <p className="flex-1 text-slate-700 leading-7">
-                  I'm <span className="font-medium">Francis</span>, focus on the intersection of
-                  <span className="font-medium">「Astrology × AI × Creation」</span>
-                  With a background in cloud computing and automation (AWS / Terraform / containerization / CI/CD), I’m now building an <span className="font-medium">Independent Astrology Engine + AI + Cloud App
-                  </span>.
-                  My intention is to guide you with <span className="font-medium">clarity and gentleness</span> so that at life’s key turning points, you can truly see yourself and make choices aligned with your soul.
-                </p>
+                  <p>
+                    With a background in cloud computing and automation
+                    (AWS / Terraform / containerization / CI/CD),
+                    I’ve also explored philosophy and psychology to understand
+                    the deeper layers of human nature and the soul.
+                  </p>
+
+                  <p>
+                    I’m now building an
+                    <span className="font-medium"> Independent Metaphysics Engine + Guided Interpretation</span>.
+                  </p>
+
+                  <p>
+                    My intention is to walk with you in
+                    <span className="font-medium"> gentleness and clarity</span>,
+                    so that at life’s key crossroads,
+                    you can see your truest self and make choices
+                    aligned with your soul’s frequency.
+                  </p>
+                </div>
+
+
               </div>
 
-              {/* 社交/入口 */}
+              {/* 社交/入口 —— 已加 icon + data-analytics */}
               <div className="flex flex-wrap gap-2">
-                <Tag href="https://fatescope.substack.com">Substack</Tag>
-                <Tag href="https://instagram.com/your_photo">Photography Instagram</Tag>
-                <Tag href="https://instagram.com/your_app" >App Instagram</Tag>
-                <Tag href="https://fatescope.app" >Fatescope App</Tag>
+                <Tag
+                  href="https://fatescope.substack.com"
+                  aria-label="Open Healing Notes (Substack)"
+                  data-analytics="about.link.substack"
+                >
+                  <NotebookPen className={iconCls} />
+                  Healing Notes
+                </Tag>
+
+                <Tag
+                  href="https://www.instagram.com/nebula.heartbeats/"
+                  aria-label="Open Photography Instagram"
+                  data-analytics="about.link.ig_photo"
+                >
+                  <InstagramBrandIcon />
+                  Photography
+                </Tag>
+
+                <Tag
+                  href="https://www.instagram.com/fatescope.app/"
+                  aria-label="Open App Instagram"
+                  data-analytics="about.link.ig_app"
+                >
+                  <InstagramBrandIcon />
+                  App
+                </Tag>
+
+                <Tag
+                  href="https://fatescope.app"
+                  aria-label="Open Fatescope App"
+                  data-analytics="about.link.app"
+                >
+                  <Globe className={iconCls} />
+                  Fatescope App
+                </Tag>
               </div>
 
-              {/* CTA */}
+              {/* CTA —— 已加 icon + data-analytics */}
               <div className="flex flex-wrap items-center gap-3">
-                <Button href="mailto:contact@fatescope.com" variant="primary" size="md" aria-label="给 Francis 发邮件">
+                <Button
+                  href="mailto:contact@fatescope.com"
+                  variant="primary"
+                  size="sm"
+                  aria-label="给 Francis 发邮件"
+                  data-analytics="about.cta.email_button"
+                >
+                  <Mail className="h-4 w-4 mr-2" />
                   Email
                 </Button>
-                <Button href="https://forms.gle/your-form" variant="secondary" size="md" rel="noopener noreferrer" aria-label="填写合作表单">
+
+                <Button
+                  href="https://forms.gle/your-form"
+                  variant="secondary"
+                  size="sm"
+                  rel="noopener noreferrer"
+                  aria-label="填写合作表单"
+                  data-analytics="about.cta.collaborate_button"
+                >
+                  <NotebookPen className="h-4 w-4 mr-2" />
                   Let’s Collaborate
                 </Button>
+
                 <a
                   href="mailto:contact@fatescope.com"
                   className="inline-flex items-center gap-2 text-[15px] text-slate-600 hover:text-slate-900 underline-offset-2 hover:underline"
                   aria-label="contact@fatescope.com"
+                  data-analytics="about.cta.email_text"
                 >
-                  <span aria-hidden>📧</span>
+                  <Mail className="h-4 w-4" aria-hidden />
                   <span>contact@fatescope.com</span>
                 </a>
               </div>
@@ -409,7 +478,7 @@ export default function HomeEn() {
                   <li>• Fate & Spirituality apps and tools (Independent engine + Intelligent interpretation)</li>
                   <li>• Cloud Deployment & Engineering (AWS / Terraform / CI/CD / Containerization)</li>
                   <li>• Content Creation — Writing × Photography × Healing</li>
-                  <li>• Cross-Disciplinary Projects Blending Technology and Art</li>
+                  <li>• Cross-disciplinary projects at the intersection of technology, art, and spirituality</li>
                 </ul>
               </div>
 
@@ -443,30 +512,141 @@ export default function HomeEn() {
       <section id="timeline" className="py-12 scroll-mt-24">
         <GlassCard tint="emerald" className="relative overflow-hidden">
           <div className="grid md:grid-cols-12 gap-6">
-            {/* 左侧标题 */}
+            {/* Left title & legend */}
             <div className="md:col-span-3">
               <h2 className="text-[22px] md:text-[26px] font-semibold tracking-tight text-slate-900">
                 Timeline
               </h2>
               <span className="mt-2 block h-[2px] w-10 rounded brand-line-cool" />
               <p className="mt-3 text-slate-600 text-[15px] leading-6">
-                一些关键节点与选择，为什么走到这里。
+                Milestones and choices that led me here.
               </p>
+
+              {/* Legend */}
+              <p className="mt-6 text-slate-600 text-[14px] leading-6">
+                <span className="inline-block w-2 h-2 rounded-full bg-sky-400 mr-2" />
+                <strong>Tech</strong> Engineering & tooling<br />
+                <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2" />
+                <strong>Healing</strong> Writing & photography for care<br />
+                <span className="inline-block w-2 h-2 rounded-full bg-violet-400 mr-2" />
+                <strong>Spirituality</strong> Astrology & inner work<br />
+                <span className="inline-block w-2 h-2 rounded-full bg-amber-400 mr-2" />
+                <strong>Crossover</strong> Where these threads meet
+              </p>
+
+              <p className="mt-6 italic text-slate-500 text-[14px] leading-6">
+                "Exploring how technology and spirituality intersect, turning engineering thinking into healing and creation."
+              </p>
+
             </div>
 
-            {/* 右侧时间线 */}
+
+
+            {/* Guiding Lantern — frosted + yellow glow + subtle breathing */}
+            <div
+              aria-hidden
+              className="
+    pointer-events-none select-none
+    absolute bottom-6 left-2 z-[1]
+    w-[120px] md:w-[200px] lg:w-[300px]
+  "
+            >
+              <div className="relative opacity-80">
+                {/* 黄色光晕：呼吸 */}
+                <div
+                  className="
+        absolute inset-[-18%] rounded-full blur-[28px]
+        bg-[radial-gradient(50%_50%_at_50%_60%,rgba(251,191,36,0.45)_0%,rgba(251,191,36,0)_80%)]
+        mix-blend-screen
+        motion-safe:animate-[lantern-glow_6.5s_ease-in-out_infinite]
+      "
+                />
+
+                {/* 灯主体：磨砂+轻微呼吸 */}
+                <img
+                  src="/images/lantern.png"
+                  alt=""
+                  className="
+        w-full mix-blend-soft-light relative z-10
+        [filter:saturate(.78)_contrast(.95)_blur(.4px)]
+        [mask-image:radial-gradient(115%_115%_at_50%_55%,#000_70%,transparent_100%)]
+        [mask-mode:alpha]
+        motion-safe:animate-[lantern-breathe_5.8s_ease-in-out_infinite]
+      "
+                />
+
+              </div>
+            </div>
+
+            {/* Right timeline */}
             <div className="md:col-span-9">
               <ol className="relative border-l border-slate-200/70 pl-8 space-y-8">
                 {[
-                  { year: "2014–2018", title: "大学阶段 · 网络安全", desc: "系统学习网络攻防与信息安全，为后续工程化与云端实践打下底层能力。" },
-                  { year: "2019", title: "开始系统化学习 CS", desc: "以 Python / Java / Shell 为主，建立工程思维与自动化意识。" },
-                  { year: "2022", title: "进入云计算与自动化", desc: "以 AWS、Terraform、容器化与 CI/CD 为核心，沉淀可复用的工程实践。" },
-                  { year: "2023", title: "启动 Side Projects", desc: "将工程栈与创作结合，探索「命理 × AI × 文字 × 摄影」的表达边界。" },
-                  { year: "2024", title: "Fatescope App 雏形", desc: "自研命理引擎 + AI 解读，强调「温柔而清晰」的指引体验。" },
-                  { year: "2025", title: "独立产品与频道上线", desc: "建立个人网站，开发独立命理引擎 Alpha 并开设疗愈文字频道。" },
+                  {
+                    year: "2014–2018",
+                    title: "University · Network Security",
+                    desc:
+                      "Studied network defense and information security—groundwork for later engineering and cloud work.",
+                    kind: "tech",
+                  },
+                  {
+                    year: "2019",
+                    title: "Beginning Systematic CS Study",
+                    desc:
+                      "Focused on Python, Java, and Shell; built engineering habits and an eye for automation.",
+                    kind: "tech",
+                  },
+                  {
+                    year: "2020",
+                    title: "Exploring Eastern and Western Astrology",
+                    desc:
+                      "Brought together astrology, psychology, and philosophy to form my own way of understanding life.",
+                    kind: "spiritual",
+                  },
+                  {
+                    year: "2021",
+                    title: "Consolidating Skills and Direction",
+                    desc:
+                      "Studied CS and astrology in parallel and started thinking about how they could fit together.",
+                    kind: "crossover",
+                  },
+                  {
+                    year: "2022",
+                    title: "Entering Cloud and Automation",
+                    desc:
+                      "Worked with AWS, Terraform, containerization, and CI/CD; built reusable, stable practices.",
+                    kind: "tech",
+                  },
+                  {
+                    year: "2023",
+                    title: "Launching Side Projects",
+                    desc:
+                      "Blended engineering with creative work—exploring ‘Astrology × AI × Writing × Photography’ with a focus on healing and self‑reflection.",
+                    kind: "crossover",
+                  },
+                  {
+                    year: "2024",
+                    title: "Fatescope App Prototype",
+                    desc:
+                      "Built an in‑house astrology engine with AI readings, aiming for guidance that’s gentle and clear.",
+                    kind: "crossover",
+                  },
+                  {
+                    year: "2025",
+                    title: "Independent Product and Channels",
+                    desc:
+                      "Launched my site, released the Alpha of the hybrid astrology engine, and opened a healing writing & photo channel.",
+                    kind: "healing",
+                  },
+                  {
+                    year: "Future",
+                    title: "Ongoing Exploration",
+                    desc:
+                      "Keep working where tech, spirituality, and creative healing meet—building tools that resonate and guide.",
+                    kind: "crossover",
+                  },
                 ].map((item, idx) => {
                   const now = new Date().getFullYear();
-                  // 解析年份：单年或“2014–2018”区间，取末尾年用于时间判断
                   const match = String(item.year).match(/(\d{4})(?:[–-](\d{4}))?/);
                   const start = match ? Number(match[1]) : now;
                   const end = match && match[2] ? Number(match[2]) : start;
@@ -480,36 +660,48 @@ export default function HomeEn() {
                     state === "past"
                       ? "brand-dot-muted ring-1 ring-white/70 shadow-sm"
                       : state === "present"
-                        ? "brand-line-warm ring-2 ring-white shadow-[0_0_12px_rgba(56,189,248,0.35)]"
-                        : "brand-line-warm ring-2 ring-white shadow-md";
+                        ? "brand-line-cool ring-2 ring-white shadow-[0_0_12px_rgba(56,189,248,0.35)]"
+                        : "brand-line-cool ring-2 ring-white shadow-md";
+
+                  const label =
+                    item.kind === "tech"
+                      ? "Tech"
+                      : item.kind === "healing"
+                        ? "Healing"
+                        : item.kind === "spiritual"
+                          ? "Spirituality"
+                          : "Crossover";
 
                   return (
                     <li key={idx} className="relative pl-6 md:pl-7">
-                      {/* 渐变圆点 */}
+                      {/* timeline dot */}
                       <span
                         className={`
-                    pointer-events-none
-                    absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
+                    pointer-events-none absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
                     h-3.5 w-3.5 rounded-full ${dotClass}
                   `}
                       />
-                      {/* 当前年：柔和的脉动光圈（可删） */}
                       {state === "present" && (
                         <span
                           className="
-                      pointer-events-none
-                      absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
-                      h-3.5 w-3.5 rounded-full
-                      animate-ping opacity-30
-                      brand-line-cool
+                      pointer-events-none absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
+                      h-3.5 w-3.5 rounded-full animate-ping opacity-30 brand-line-cool
                     "
                         />
                       )}
 
-                      <time className="text-xs uppercase tracking-wider text-slate-500">
+                      <time className="block text-xs uppercase tracking-wider text-slate-500 mb-1">
                         {item.year}
                       </time>
-                      <h3 className="mt-1 font-medium text-slate-900">{item.title}</h3>
+
+                      {/* title + gray label */}
+                      <h3 className="mt-1 font-medium text-slate-900 inline-flex items-center gap-2">
+                        {item.title}
+                        <span className="text-[11px] px-1.5 py-0.5 rounded-full border border-slate-300 text-slate-600 bg-slate-50">
+                          {label}
+                        </span>
+                      </h3>
+
                       <p className="mt-1 text-[15px] leading-6 text-slate-700">{item.desc}</p>
                     </li>
                   );
@@ -519,6 +711,7 @@ export default function HomeEn() {
           </div>
         </GlassCard>
       </section>
+
 
 
 

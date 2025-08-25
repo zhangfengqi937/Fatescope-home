@@ -43,10 +43,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             src="/images/moon-left-1.png"
             alt=""
             className="
-      absolute left-10 top-10        /* 先放到可见区域，避免负偏移看不到 */
-      w-[420px] md:w-[520px]
-      opacity-70                      /* 提高透明度，先确保看得到 */
-    "
+    absolute
+    left-[2vw] top-[12vh]          /* 手机：仅靠左 2% 视口宽度 */
+    md:left-[4vw] md:top-[14vh]    /* 平板：再往左一些 */
+    lg:left-[0vw] lg:top-[10vh]    /* 桌面：保持在左上角，但可见 */
+    w-[42vw] max-w-[480px]
+    md:w-[36vw] lg:w-[30vw]
+    opacity-70 mix-blend-soft-light
+  "
           />
         </div>
         {/* 2) 导航（放在主内容之前；提高层级） */}
