@@ -84,7 +84,7 @@ export default function TerminalChangelogDigest({ count = 4 }: { count?: number 
               "
               aria-label="查看全部更新"
             >
-              查看全部 <span>→</span>
+              View All Logs <span>→</span>
             </a>
           </div>
         </div>

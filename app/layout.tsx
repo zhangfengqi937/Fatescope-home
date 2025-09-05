@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from "../components/Header";
 import LangGate from "../components/LangGate";
 import PhoenixGlobalBg from "@/components/PhoenixGlobalBg";
+import LanguageGate from "@/components/LanguageGate"; // 
+
 
 export const metadata = {
   title: "Fatescope — Francis Zhang",
@@ -68,6 +70,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="mt-8 text-center text-[13px] text-slate-500 pb-8">
           © {new Date().getFullYear()} Fatescope · Built with love and clarity.
         </footer>
+
+        {/* 5) 语言选择弹层（首次无 cookie 才会显示）
+              z-index 在组件内是 60/70，会覆盖全站并给背景磨砂 
+              forceAlwaysOpen
+              */}
+        <LanguageGate/> 
+
       </body>
     </html>
   );

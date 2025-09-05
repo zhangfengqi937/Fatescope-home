@@ -24,7 +24,7 @@ export default async function Page() {
           Changelog
         </h1>
         <p className="mt-2 text-slate-600">
-          左列为 <b>Homepage</b>，右列为 <b>App</b>。所有记录来自同一份 <code>changes.json</code>。
+          Left for my <b>Homepage</b>，Right for <b>Fatescope App</b>. All from same file - <code>changes.json</code>。
         </p>
 
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">

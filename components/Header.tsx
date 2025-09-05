@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import LangSwitcher from './LangSwitcher';
 import { Sora } from 'next/font/google';
+
 const brandFont = Sora({ subsets: ['latin'], weight: ['500', '400'] });
 
 const SECTIONS = [
@@ -14,7 +15,6 @@ const SECTIONS = [
   { id: 'timeline', label: 'Timeline' }, 
 ];
 
-// 你的 GitHub 链接
 const GITHUB_LINKS = [
   { href: 'https://github.com/zhangfengqi937/fatescope-home', label: 'Homepage Repo' },
   { href: 'https://github.com/zhangfengqi937/fatescope-app-docs', label: 'Fatescope Docs' },
@@ -24,44 +24,38 @@ const GITHUB_LINKS = [
 export default function Header() {
   const [active, setActive] = useState<string | null>(null);
   const pathname = usePathname();
-  const base = pathname.startsWith('/en') ? '/en' : '/';
-  const isEn = pathname.startsWith('/en');
 
-  // —— 渐变类（写成常量，保证 Tailwind JIT 能识别） ——
-  const GRAD_WARM      = 'bg-[linear-gradient(90deg,_#f59e0b_0%,_#34d399_58%,_#93c5fd_100%)]';
+  // ✅ 英文 = '/'，中文 = '/zh'
+  const isEn = !pathname.startsWith('/zh');
+  const base = isEn ? '/' : '/zh';
+
+  // —— 渐变类 —— //
   const GRAD_WARM_HOV  = 'hover:bg-[linear-gradient(90deg,_#f59e0b_0%,_#34d399_58%,_#93c5fd_100%)]';
   const GRAD_WARM_GHOV = 'group-hover:bg-[linear-gradient(90deg,_#f59e0b_0%,_#34d399_58%,_#93c5fd_100%)]';
 
-  const GRAD_COOL      = 'bg-[linear-gradient(90deg,_#22d3ee_0%,_#60a5fa_55%,_#818cf8_100%)]';
   const GRAD_COOL_HOV  = 'hover:bg-[linear-gradient(90deg,_#22d3ee_0%,_#60a5fa_55%,_#818cf8_100%)]';
   const GRAD_COOL_GHOV = 'group-hover:bg-[linear-gradient(90deg,_#22d3ee_0%,_#60a5fa_55%,_#818cf8_100%)]';
 
-  // 当前页面用哪一套渐变（与左侧 Fatescope 一致）
+  // 当前页面用哪一套渐变（英文=冷色，中文=暖色）
   const BRAND_GHOV = isEn ? GRAD_COOL_GHOV : GRAD_WARM_GHOV;
   const LINK_HOV   = isEn ? GRAD_COOL_HOV  : GRAD_WARM_HOV;
 
-  // 首次加载：如果 URL 自带 #hash，则先高亮对应分区
+  // —— ScrollSpy —— //
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const hash = window.location.hash?.replace('#', '');
     if (hash) setActive(hash);
   }, []);
 
-  // Scroll Spy：滚动时自动校正当前分区
   useEffect(() => {
-    const els = SECTIONS.map(s => document.getElementById(s.id)).filter(
-      Boolean
-    ) as HTMLElement[];
+    const els = SECTIONS.map(s => document.getElementById(s.id)).filter(Boolean) as HTMLElement[];
     if (!els.length) return;
 
     const obs = new IntersectionObserver(
       entries => {
         const visible = entries
           .filter(e => e.isIntersecting)
-          .sort(
-            (a, b) =>
-              Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top)
-          );
+          .sort((a, b) => Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top));
         if (visible[0]) setActive(visible[0].target.id);
       },
       { rootMargin: '-10% 0px -75% 0px', threshold: [0, 0.1, 0.3] }
@@ -74,7 +68,7 @@ export default function Header() {
     };
   }, []);
 
-  // 点击导航：立即高亮 + 平滑滚动 + 更新 hash（不刷新）
+  // 点击导航
   const goTo = (id: string, fromMobile?: boolean) => (e: React.MouseEvent) => {
     e.preventDefault();
     setActive(id);
@@ -95,20 +89,16 @@ export default function Header() {
   // —— 样式 —— //
   const activeBg = isEn ? 'bg-sky-600' : 'bg-emerald-600';
 
-  // 右侧链接：激活=实心白字；未激活=常态纯色，悬停渐变文字
   const linkCls = (id: string) => {
-    const base =
+    const baseCls =
       'px-3 py-1.5 rounded-full text-[15px] transition-all duration-200 ring-1 ring-transparent';
     if (active === id) {
-      return [
-        base,
-        `${activeBg} text-white shadow-sm shadow-slate-900/10`,
-      ].join(' ');
+      return [baseCls, `${activeBg} text-white shadow-sm shadow-slate-900/10`].join(' ');
     }
     return [
-      base,
+      baseCls,
       'text-slate-700 hover:text-transparent hover:bg-clip-text hover:shadow-sm',
-      LINK_HOV, // 悬停时的品牌渐变
+      LINK_HOV,
     ].join(' ');
   };
 
@@ -117,7 +107,8 @@ export default function Header() {
       <div className="relative bg-gradient-to-b from-white/70 to-sky-100/40 backdrop-blur supports-[backdrop-filter]:bg-white/60 ring-1 ring-sky-900/10 shadow-[0_6px_20px_rgba(15,23,42,0.06)]">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-sky-300/60 to-transparent" />
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between gap-4">
-          {/* 品牌：常态专业，悬停品牌渐变 */}
+          
+          {/* 品牌 */}
           <a href={base} className="flex items-center gap-3 group">
             <img
               src="/assets/favicon.png"

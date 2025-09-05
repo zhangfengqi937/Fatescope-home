@@ -7,21 +7,33 @@ import type { Route } from 'next';
 export default function LangSwitcher() {
   const pathname = usePathname();
   const router = useRouter();
-  const [isEn, setIsEn] = useState(pathname.startsWith('/en'));
-  useEffect(() => setIsEn(pathname.startsWith('/en')), [pathname]);
+
+  // EN 默认在根路径 `/`；只要不是 /zh 开头都算 EN
+  const [isEn, setIsEn] = useState(!pathname.startsWith('/zh'));
+  useEffect(() => setIsEn(!pathname.startsWith('/zh')), [pathname]);
 
   const go = (lang: 'zh' | 'en') => {
     const hash = typeof window !== 'undefined' ? window.location.hash : '';
-    const toEn = lang === 'en';
-    const target = toEn
-      ? (`/en${pathname === '/' ? '' : pathname}` as Route)   // 断言为 Route
-      : (pathname.replace(/^\/en(\/|$)/, '/') as Route);
+    const toZh = lang === 'zh';
+
+    let target: string;
+    if (toZh) {
+      target = pathname.startsWith('/zh')
+        ? pathname
+        : `/zh${pathname === '/' ? '' : pathname}`;
+    } else {
+      target = pathname.replace(/^\/zh(\/|$)/, '/');
+    }
 
     try { localStorage.setItem('lang', lang); } catch {}
-    router.push(target);                                     // 先切页面
-    if (hash) setTimeout(() => {                             // 再还原锚点
-      try { window.location.hash = hash; } catch {}
-    }, 0);
+
+    router.push(target as Route); // ← 关键：断言为 Route
+
+    if (hash) {
+      setTimeout(() => {
+        try { window.location.hash = hash; } catch {}
+      }, 0);
+    }
   };
 
   const btn = (label: string, active: boolean, onClick: () => void) => (
@@ -35,8 +47,9 @@ export default function LangSwitcher() {
 
   return (
     <div className="flex items-center gap-1">
-      {btn('中文', !isEn, () => go('zh'))}
       {btn('EN', isEn, () => go('en'))}
+      {btn('中文', !isEn, () => go('zh'))}
+
     </div>
   );
 }

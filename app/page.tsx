@@ -1,103 +1,100 @@
-// app/page.tsx
-
-import Lightbox from "../components/Lightbox";
-import ClientGallery from "../components/ClientGallery";
-import HeroAurora from "../components/HeroAurora";
+// app/en/page.tsx
+import HeroAuroraCool from "../components/HeroAuroraCool";
 import GlassCard from "../components/GlassCard";
+import ClientGallery from "../components/ClientGallery";
+import Lightbox from "../components/Lightbox";
 import Button from "@/components/Button";
 import Image from "next/image";
 import { Tag } from "@/components/Tag";
 import { Badge } from "@/components/Badge";
+import TerminalChangelogDigest from "@/components/TerminalChangelogDigest";
 
 import { NotebookPen, Camera, AppWindow, Globe, Mail } from "lucide-react";
 import InstagramBrandIcon from "@/components/InstagramBrandIcon";
 
-import TerminalChangelogDigest from '@/components/TerminalChangelogDigest';
-
-
 const iconCls = "h-4 w-4 mr-1.5 translate-y-[1px] opacity-80";
 
+
 const photos = [
+  "/images/17.jpg",
   "/images/01.jpg", "/images/02.jpg", "/images/03.jpg", "/images/04.jpg",
   "/images/05.jpg", "/images/06.jpg", "/images/07.jpg", "/images/08.jpg",
   "/images/09.jpg", "/images/10.jpg", "/images/11.jpg", "/images/12.jpg",
   "/images/13.jpg", "/images/14.jpg", "/images/15.jpg", "/images/16.jpg",
+
 ];
 
-export default function Home() {
+export default function HomeEn() {
   return (
     <main className="max-w-6xl mx-auto px-6">
-      {/* 1) Hero（渐变 + 可选淡背景图） */}
-      <HeroAurora />
+      {/* Hero — cool tone */}
+      <HeroAuroraCool />
 
       {/* App */}
       <section id="app" className="py-14">
         <GlassCard
-          tint="emerald"
+          tint="sky"
           className="relative overflow-hidden grid grid-cols-1 md:grid-cols-4 md:gap-12 md:items-center"
         >
           {/* 左列：文字 75% */}
           <div className="md:col-span-3 space-y-6">
             <div className="space-y-3">
               <h2 className="text-[28px] md:text-[34px] font-semibold tracking-tight text-slate-900
-          [text-shadow:0.8px_0.8px_0_rgba(15,23,42,.18),_-0.6px_-0.6px_0_rgba(255,255,255,.55)]">
+                [text-shadow:0.8px_0.8px_0_rgba(15,23,42,.18),_-0.6px_-0.6px_0_rgba(255,255,255,.55)]">
                 Fatescope App
               </h2>
-              <span className="block h-[2px] w-10 rounded brand-line-warm" />
+              <span className="mt-2 block h-[2px] w-10 rounded brand-line-cool" />
             </div>
+
             <p className="text-base md:text-lg text-slate-700 leading-8">
-              你的人生地图 × 灵魂故事 × 私人运势。
-              不仅是命理工具，而是陪伴你走过关键时刻的智慧之光。
+              Independent Hybrid astrology algorithms (East × West) Engine × AI Insight. Your life map × soul guidance × personal destiny.
+              Not just astrology, but a light of wisdom that stays with you through every turning point.
             </p>
 
-
-            {/* 技术基石 */}
-            <h6 className="mt-6 text-[15px] font-medium text-slate-800">技术基石</h6>
+            {/* Technology Foundation */}
+            <h6 className="mt-6 text-[15px] font-medium text-slate-800">Technology Foundation</h6>
             <ul className="text-base text-slate-700 list-disc ml-5 space-y-2 leading-7">
-              <li>自研命理引擎 × 智能解读 —— 从零构建，只为更懂你（持续打磨）</li>
-              <li>云端架构 —— 稳定、安全、持续进化（AWS / Terraform / 容器化 / CI/CD）</li>
+              <li>Independent Engine × Guided Interpretation — Built from the ground up, continuously refined for clarity and depth</li>
+              <li>Cloud Architecture — Stable, secure, and evolving with AWS, Terraform, containerization, and CI/CD</li>
             </ul>
 
-            {/* 已上线功能 */}
-            <h6 className="mt-4 text-[15px] font-medium text-slate-800">已上线功能</h6>
+            {/* Current Feature */}
+            <h6 className="mt-4 text-[15px] font-medium text-slate-800">Highlight Features</h6>
             <ul className="text-base text-slate-700 list-disc ml-5 space-y-2 leading-7">
-              <li>占卜 —— 按时间占卜特定事件，让选择不再孤单</li>
             </ul>
 
-            {/* Coming Soon */}
-            <h6 className="text-[15px] font-medium text-slate-800 mb-2 flex items-center gap-2">
+            {/* Coming Soon             <h6 className="text-[15px] font-medium text-slate-800 mb-2 flex items-center gap-2">
               <span className="text-amber-500 text-lg">⏳</span>
               Coming Soon
-            </h6>
-            <ul className="text-base text-slate-700 list-disc ml-5 space-y-2 leading-7">
-              <li>灵魂故事 —— 生成你的前世今生剧本，以及与你人的灵魂羁绊</li>
-              <li>私人运势报告 —— 定制阶段性趋势与方向</li>
-              <li>人生蓝图 —— 人生使命、整体运势与核心课题指引</li>
-              <li>流年 / 流月 / 流日运势 —— 洞察关键节点</li>
-              <li>一对一深度解盘 —— 计划中的高级私人服务，提供更详细的个性化解读</li>
-            </ul>
+            </h6>*/}
 
+            <ul className="text-base text-slate-700 list-disc ml-5 space-y-2 leading-7">
+              <li>Divination — Timely readings for specific questions, offering clarity and reassurance in key decisions</li>
+              <li>Soul Stories — Narratives of past and present lives, and the unseen connections that shape your path</li>
+              <li>Personal Forecast — Customized trends and directions to help you navigate each stage of life</li>
+              <li>Life Blueprint — Guidance on your mission, overall destiny, and the lessons written into your script</li>
+              <li>Annual / Monthly / Daily Flow — Insights into turning points and cycles of change</li>
+              <li>One-on-One Deep Reading — Planned premium service for personalized, in-depth guidance</li>
+            </ul>
 
             <div className="pt-2 space-y-2">
               <h6 className="text-[16px] md:text-[18px] font-medium tracking-wide text-slate-700
-          [text-shadow:0.5px_0.5px_0_rgba(15,23,42,.12),_-0.5px_-0.5px_0_rgba(255,255,255,.4)]">
-                我的初衷
+                [text-shadow:0.5px_0.5px_0_rgba(15,23,42,.12),_-0.5px_-0.5px_0_rgba(255,255,255,.4)]">
+                My Calling
               </h6>
-              <span className="block h-[2px] w-8 rounded brand-line-warm" />
+              <span className="mt-2 block h-[2px] w-10 rounded brand-line-cool" />
               <p className="text-sm md:text-base text-slate-700 leading-7">
-                帮助每个人找到人生的意义、方向与使命，不只是解惑，而是照亮。
-              </p>
+                To help each person find meaning, direction, and mission in life—not only to resolve questions, but to illuminate.              </p>
             </div>
 
             <div className="pt-2">
               <Button
-                href="https://fatescope.app"
-                rel="noopener noreferrer"
                 variant="primary"
                 size="md"
-                aria-label="打开 FateScope 应用"
+                aria-label="FateScope App Coming Soon"
+                disabled
               >
-                开始探索
+                Coming Soon
               </Button>
             </div>
           </div>
@@ -122,14 +119,11 @@ export default function Home() {
                 />
               </div>
 
-              <p className="mt-2 w-full text-slate-600 italic text-sm md:text-base text-center md:text-right leading-relaxed">
-                在命运的分岔口，提供一盏灯
+              <p className="mt-2 text-slate-600 italic text-sm md:text-base text-center md:text-center">
+                Lighting the way at life’s crossroads
               </p>
             </div>
           </div>
-
-
-
         </GlassCard>
       </section>
 
@@ -141,21 +135,20 @@ export default function Home() {
             <p className="text-xs uppercase tracking-wider text-slate-500">Selected</p>
             <h2
               className="text-2xl md:text-3xl font-semibold tracking-tight leading-none text-slate-900
-                   transition-[color,background] duration-300
-                   group-hover:bg-[linear-gradient(90deg,_#f59e0b_0%,_#34d399_58%,_#93c5fd_100%)]
-                   group-hover:bg-clip-text group-hover:text-transparent">
+                         transition-[color,background] duration-300
+                         group-hover:bg-[linear-gradient(90deg,_#f59e0b_0%,_#34d399_58%,_#93c5fd_100%)]
+                         group-hover:bg-clip-text group-hover:text-transparent">
               Moments
             </h2>
-            <span className="mt-2 block h-[2px] w-10 rounded brand-line-warm" />
-          </div>
+            <span className="mt-2 block h-[2px] w-10 rounded brand-line-cool" />          </div>
 
           {/* 右侧“View on Glass” */}
           <a
-            href="https://glass.photo/francisz937"
+            href="https://glass.photo/你的Glass用户名"   // ← 换成你的Glass主页
             target="_blank"
             rel="noopener noreferrer"
             aria-label="View on Glass"
-            className="inline-flex items-center gap-1 text-sm font-medium text-slate-600
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600
              hover:text-slate-900 hover:underline focus-visible:outline-none
              focus-visible:ring-2 focus-visible:ring-emerald-400/50 rounded"
           >
@@ -170,7 +163,7 @@ export default function Home() {
 
       {/* Substack */}
       <section id="substack" className="py-12 scroll-mt-24">
-        <GlassCard tint="emerald" className="relative overflow-hidden">
+        <GlassCard tint="sky" className="relative overflow-hidden">
           <div className="grid md:grid-cols-12 md:gap-12 gap-6 items-start">
             {/* 左侧文案 */}
             <div className="md:col-span-7 space-y-6">
@@ -178,45 +171,52 @@ export default function Home() {
               <div className="space-y-3">
                 <h2
                   className="
-              text-[28px] md:text-[34px] font-semibold tracking-tight text-slate-900
-              [text-shadow:0.8px_0.8px_0_rgba(15,23,42,.18),_-0.6px_-0.6px_0_rgba(255,255,255,.55)]
-            "
+                    text-[28px] md:text-[34px] font-semibold tracking-tight text-slate-900
+                    [text-shadow:0.8px_0.8px_0_rgba(15,23,42,.18),_-0.6px_-0.6px_0_rgba(255,255,255,.55)]
+                  "
                 >
-                  疗愈札记
+                  Healing Notes
                 </h2>
-                <span className="block h-[2px] w-10 rounded brand-line-warm" />
-              </div>
+                <span className="mt-2 block h-[2px] w-10 rounded brand-line-cool" />              </div>
 
               <p className="text-base md:text-lg text-slate-700 leading-8">
-                写给在人生路口迷路的你。这里有四种频率：
+                For those who feel lost at life’s crossroads.
+                Here you will find four frequencies of writing:
               </p>
 
               <ul className="list-disc list-inside text-slate-700 text-base leading-7 space-y-1.5">
-                <li>每周短句：一句疗愈提醒，陪你在日常保持清醒</li>
-                <li>与神对话：通过情绪与关系，看见自己更真实的一面（每月两篇）</li>
-                <li>灵魂科学：用科学的语言，解释灵性的指引（每月两篇）</li>
-                <li>月度深文：结合个人经历，探索痛苦、爱与觉醒的底层意义</li>
+                <li>Weekly Notes — one healing reminder to stay awake in daily life</li>
+                <li>With the Higher Self — through emotions and relationships, seeing a truer side of yourself (twice a month)</li>
+                <li>Soul Science — explaining spiritual guidance in the language of science (twice a month)</li>
+                <li>Monthly Essays — weaving personal experience to explore the deeper meaning of pain, love, and awakening</li>
               </ul>
 
               {/* 初衷 */}
               <div className="pt-2 space-y-2">
                 <h6 className="text-[16px] md:text-[18px] font-medium tracking-wide text-slate-700
-    [text-shadow:0.5px_0.5px_0_rgba(15,23,42,.12),_-0.5px_-0.5px_0_rgba(255,255,255,.4)]">
-                  我的初衷
+          [text-shadow:0.5px_0.5px_0_rgba(15,23,42,.12),_-0.5px_-0.5px_0_rgba(255,255,255,.4)]">
+                  My Calling
                 </h6>
                 <span className="block h-[2px] w-8 rounded brand-line-warm" />
                 <p className="text-sm md:text-base text-slate-700 leading-7">
-                  帮助每个人找到人生的意义、方向与使命，不只是解惑，而是照亮。
-                </p>
+                  To help each person find meaning, direction, and mission in life—not only to answer questions, but to bring light.                </p>
               </div>
 
 
               {/* 标签 */}
-              <div className="flex flex-wrap gap-2 text-sm md:text-base">
-                <Button as="span" variant="tag" size="sm">疗愈</Button>
-                <Button as="span" variant="tag" size="sm">灵性对话</Button>
-                <Button as="span" variant="tag" size="sm">灵性与科学</Button>
-                <Button as="span" variant="tag" size="sm">人生洞察</Button>
+              <div className="mt-5 flex flex-wrap gap-2 text-sm md:text-base">
+                <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-sky-200 text-slate-700 text-[14px] font-medium">
+                  Healing
+                </span>
+                <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-sky-200 text-slate-700 text-[14px] font-medium">
+                  Reflection
+                </span>
+                <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-sky-200 text-slate-700 text-[14px] font-medium">
+                  Spirituality
+                </span>
+                <span className="px-3 py-1 rounded-full bg-white/70 ring-1 ring-sky-200 text-slate-700 text-[14px] font-medium">
+                  Insights
+                </span>
               </div>
 
               {/* CTA 按钮 */}
@@ -237,7 +237,7 @@ export default function Home() {
                   size="md"
                   aria-label="免费订阅 Fatescope Substack"
                 >
-                  免费订阅
+                  Free Subscription
                 </Button>
               </div>
             </div>
@@ -248,22 +248,22 @@ export default function Home() {
               <div className="relative rounded-xl bg-white/50 backdrop-blur p-4 md:p-5 shadow-sm border border-black/5 overflow-hidden">
                 <div className="flex items-center gap-2">
                   <span className="h-4 w-1 rounded bg-gradient-to-b from-emerald-400 to-blue-400" aria-hidden="true"></span>
-                  <p className="text-xs uppercase tracking-wider text-slate-500">与神对话 · 系列</p>
+                  <p className="text-xs uppercase tracking-wider text-slate-500">With Higher Self · Series</p>
                 </div>
                 <a
-                  href="https://fatescope.substack.com/p/c01"
+                  href="https://lightdiary.substack.com/p/with-higher-self-chapter-one-pain"
                   target="_blank" rel="noopener noreferrer"
                   className="mt-1 block text-slate-900 font-medium leading-6 hover:underline"
                 >
-                  与神对话 · 三章 · 恐惧与选择
+                  With Higher Self · Chapter One · Pain as Trial
                 </a>
-                <p className="text-xs text-slate-500 mt-1">更新于：2025-08-11</p>
+                <p className="text-xs text-slate-500 mt-1">Updated on：2025-08-25</p>
                 <a
-                  href="https://fatescope.substack.com/tag/与神对话"
+                  href="https://lightdiary.substack.com/archive"
                   target="_blank" rel="noopener noreferrer"
                   className="mt-2 inline-block text-xs text-slate-500 hover:underline"
                 >
-                  查看全部 →
+                  View All →
                 </a>
 
                 {/* 水印（纯装饰） */}
@@ -276,22 +276,22 @@ export default function Home() {
               <div className="relative rounded-xl bg-white/50 backdrop-blur p-4 md:p-5 shadow-sm border border-black/5 overflow-hidden">
                 <div className="flex items-center gap-2">
                   <span className="h-4 w-1 rounded bg-gradient-to-b from-emerald-400 to-blue-400" aria-hidden="true"></span>
-                  <p className="text-xs uppercase tracking-wider text-slate-500">灵魂科学 · 系列</p>
+                  <p className="text-xs uppercase tracking-wider text-slate-500">Soul Science · Series</p>
                 </div>
                 <a
-                  href="https://fatescope.substack.com/p/intro-to-higher-self"
+                  href="https://lightdiary.substack.com/p/soul-science-part-one-what-is-the"
                   target="_blank" rel="noopener noreferrer"
                   className="mt-1 block text-slate-900 font-medium leading-6 hover:underline"
                 >
-                  灵魂科学 · 第一篇 · 什么是高我？(Intro to Higher Self)
+                  Soul Science · Part One · What Is the Higher Self?
                 </a>
-                <p className="text-xs text-slate-500 mt-1">更新于：2025-08-18</p>
+                <p className="text-xs text-slate-500 mt-1">Updated on：2025-09-02</p>
                 <a
-                  href="https://fatescope.substack.com/tag/灵魂科学"
+                  href="https://lightdiary.substack.com/archive"
                   target="_blank" rel="noopener noreferrer"
                   className="mt-2 inline-block text-xs text-slate-500 hover:underline"
                 >
-                  查看全部 →
+                  View All →
                 </a>
 
                 <div className="absolute right-2 bottom-2 w-14 h-14 opacity-30 pointer-events-none select-none">
@@ -303,22 +303,22 @@ export default function Home() {
               <div className="relative rounded-xl bg-white/50 backdrop-blur p-4 md:p-5 shadow-sm border border-black/5 overflow-hidden">
                 <div className="flex items-center gap-2">
                   <span className="h-4 w-1 rounded bg-gradient-to-b from-emerald-400 to-blue-400" aria-hidden="true"></span>
-                  <p className="text-xs uppercase tracking-wider text-slate-500">月度深文 · 系列</p>
+                  <p className="text-xs uppercase tracking-wider text-slate-500">Soul Journal · Series</p>
                 </div>
                 <a
-                  href="https://fatescope.substack.com/p/d3f"
+                  href="https://lightdiary.substack.com/p/soul-journal-the-dark-i-walked-through"
                   target="_blank" rel="noopener noreferrer"
                   className="mt-1 block text-slate-900 font-medium leading-6 hover:underline"
                 >
-                  灵魂月记 × 我走过的黑夜 (Dark)
+                  Soul Journal × The Dark I Walked Through
                 </a>
-                <p className="text-xs text-slate-500 mt-1">更新于：2025-07-28</p>
+                <p className="text-xs text-slate-500 mt-1">Updated on：2025-08-31</p>
                 <a
-                  href="https://fatescope.substack.com/tag/月度深文"
+                  href="https://lightdiary.substack.com/archive"
                   target="_blank" rel="noopener noreferrer"
                   className="mt-2 inline-block text-xs text-slate-500 hover:underline"
                 >
-                  查看全部 →
+                  View All →
                 </a>
 
                 {/* 羽毛笔水印（装饰） */}
@@ -338,11 +338,9 @@ export default function Home() {
         </GlassCard>
       </section>
 
-
-
       {/* About & Collaborations */}
       <section id="about" className="py-12 scroll-mt-24">
-        <GlassCard tint="emerald" className="relative overflow-hidden">
+        <GlassCard tint="sky" className="relative overflow-hidden">
           <div className="grid md:grid-cols-12 md:gap-12 gap-6 items-start">
             {/* 左：头像 + 简介 */}
             <div className="md:col-span-7 space-y-6">
@@ -350,35 +348,50 @@ export default function Home() {
               <div className="space-y-3">
                 <h2
                   className="
-              text-[28px] md:text-[34px] font-semibold tracking-tight text-slate-900
-              [text-shadow:0.8px_0.8px_0_rgba(15,23,42,.18),_-0.6px_-0.6px_0_rgba(255,255,255,.55)]
-            "
+                    text-[28px] md:text-[34px] font-semibold tracking-tight text-slate-900
+                    [text-shadow:0.8px_0.8px_0_rgba(15,23,42,.18),_-0.6px_-0.6px_0_rgba(255,255,255,.55)]
+                  "
                 >
                   About & Collaborations
                 </h2>
-                <span className="block h-[2px] w-10 rounded brand-line-warm" />
+                <span className="mt-2 block h-[2px] w-10 rounded brand-line-cool" />
               </div>
 
-              {/* 头像 + 摘要 */}
+              {/* 头像 + 摘要（无头像可删除整个头像块） */}
               <div className="flex items-start gap-4">
                 <div
                   className="
-              relative size-16 md:size-20 rounded-full overflow-hidden
-              ring-2 ring-emerald-300/60 bg-gradient-to-tr from-emerald-100 via-sky-100 to-amber-100
-            "
+                    relative size-16 md:size-20 rounded-full overflow-hidden
+                    ring-2 ring-emerald-300/60 bg-gradient-to-tr from-emerald-100 via-sky-100 to-amber-100
+                  "
                   aria-hidden="true"
-                />
-                <div className="flex-1 text-slate-700 leading-7 space-y-3 break-words">
-                  <p>我是 <span className="font-medium">Francis</span>，专注结合
-                    <span className="font-medium">「命理 × 科技 × 创作 × 疗愈」</span>
-                  </p>
+                >
+                  {/* <img src="/images/avatar.jpg" alt="Francis" className="w-full h-full object-cover" /> */}
+                </div>
+                <div className="flex-1 text-slate-700 leading-7 space-y-4">
                   <p>
-                    曾深耕云计算与自动化（AWS / Terraform / 容器化 / CI/CD），
-                    并探索哲学与心理学，以理解人性与灵魂的深层结构。
+                    I'm <span className="font-medium">Francis</span>, focusing on the intersection of
+                    <span className="font-medium"> “Metaphysics × Technology × Creation × Healing”</span>.
                   </p>
-                  <p>现在正构建 <span className="font-medium">独立命理引擎 + 智能解读</span>。</p>
-                  <p>我希望以 <span className="font-medium">温柔而清晰</span> 的方式，
-                    陪伴你在关键节点，看见真实的自己，并做出与灵魂频率对齐的选择。
+
+                  <p>
+                    With a background in cloud computing and automation
+                    (AWS / Terraform / containerization / CI/CD),
+                    I’ve also explored philosophy and psychology to understand
+                    the deeper layers of human nature and the soul.
+                  </p>
+
+                  <p>
+                    I’m now building an
+                    <span className="font-medium"> Independent Metaphysics Engine + Guided Interpretation</span>.
+                  </p>
+
+                  <p>
+                    My intention is to walk with you in
+                    <span className="font-medium"> gentleness and clarity</span>,
+                    so that at life’s key crossroads,
+                    you can see your truest self and make choices
+                    aligned with your soul’s frequency.
                   </p>
                 </div>
 
@@ -461,15 +474,15 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 右：合作方向 + 技术栈（不变） */}
+            {/* 右：合作方向 + 技术栈 */}
             <div className="md:col-span-5 space-y-4">
               <div className="rounded-xl bg-white/50 backdrop-blur p-4 md:p-5 shadow-sm border border-black/5">
                 <h3 className="font-semibold text-slate-900">Open to</h3>
                 <ul className="mt-2 space-y-1.5 text-slate-700 text-[15px] leading-6">
-                  <li>• 命理 / 灵性相关应用与工具（独立引擎 + 智能解读）</li>
-                  <li>• 云端部署与工程化（AWS / Terraform / CI/CD / 容器化）</li>
-                  <li>• 文字 × 摄影 × 疗愈主题的内容共创</li>
-                  <li>• 技术 × 艺术 × 灵性 的跨界探索</li>
+                  <li>• Fate & Spirituality apps and tools (Independent engine + Intelligent interpretation)</li>
+                  <li>• Cloud Deployment & Engineering (AWS / Terraform / CI/CD / Containerization)</li>
+                  <li>• Content Creation — Writing × Photography × Healing</li>
+                  <li>• Cross-disciplinary projects at the intersection of technology, art, and spirituality</li>
                 </ul>
               </div>
 
@@ -489,6 +502,10 @@ export default function Home() {
                   <Badge>Tailwind</Badge>
                   <Badge>API</Badge>
                 </div>
+                {/* 可选：当前状态/节奏 */}
+                {/* <p className="mt-3 text-[13px] text-slate-500">
+                  当前接受远程协作；每周固定时间段回复合作邮件。
+                </p> */}
               </div>
             </div>
           </div>
@@ -499,34 +516,32 @@ export default function Home() {
       <section id="timeline" className="py-12 scroll-mt-24">
         <GlassCard tint="emerald" className="relative overflow-hidden">
           <div className="grid md:grid-cols-12 gap-6">
-            {/* 左侧标题 */}
+            {/* Left title & legend */}
             <div className="md:col-span-3">
               <h2 className="text-[22px] md:text-[26px] font-semibold tracking-tight text-slate-900">
                 Timeline
               </h2>
-              <span className="mt-2 block h-[2px] w-10 rounded brand-line-warm" />
-
-              {/* 简介 */}
+              <span className="mt-2 block h-[2px] w-10 rounded brand-line-cool" />
               <p className="mt-3 text-slate-600 text-[15px] leading-6">
-                一些关键节点与选择，为什么走到这里。
+                Milestones and choices that led me here.
               </p>
 
-              {/* 标签说明 */}
+              {/* Legend */}
               <p className="mt-6 text-slate-600 text-[14px] leading-6">
-                <span className="inline-block w-2 h-2 rounded-full bg-sky-400 mr-2"></span>
-                <strong>Tech</strong> 技术学习与工程化<br />
-                <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>
-                <strong>Healing</strong> 疗愈、文字与摄影表达<br />
-                <span className="inline-block w-2 h-2 rounded-full bg-violet-400 mr-2"></span>
-                <strong>Spirituality</strong> 灵性、命理与自我探索<br />
-                <span className="inline-block w-2 h-2 rounded-full bg-amber-400 mr-2"></span>
-                <strong>Crossover</strong> 跨界融合与表达
+                <span className="inline-block w-2 h-2 rounded-full bg-sky-400 mr-2" />
+                <strong>Tech</strong> Engineering & tooling<br />
+                <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2" />
+                <strong>Healing</strong> Writing & photography for care<br />
+                <span className="inline-block w-2 h-2 rounded-full bg-violet-400 mr-2" />
+                <strong>Spirituality</strong> Astrology & inner work<br />
+                <span className="inline-block w-2 h-2 rounded-full bg-amber-400 mr-2" />
+                <strong>Crossover</strong> Where these threads meet
               </p>
 
-              {/* 一句话愿景 */}
               <p className="mt-6 italic text-slate-500 text-[14px] leading-6">
-                “探索技术与灵性如何交汇，把工程思维转化为疗愈与创造。”
+                "Exploring how technology and spirituality intersect, turning engineering thinking into healing and creation."
               </p>
+
             </div>
 
             {/* Guiding Lantern — frosted + yellow glow + subtle breathing */}
@@ -561,22 +576,77 @@ export default function Home() {
         motion-safe:animate-[lantern-breathe_5.8s_ease-in-out_infinite]
       "
                 />
+
               </div>
             </div>
 
-            {/* 右侧时间线 */}
+            {/* Right timeline */}
             <div className="md:col-span-9">
               <ol className="relative border-l border-slate-200/70 pl-8 space-y-8">
                 {[
-                  { year: "2014–2018", title: "大学阶段 · 网络安全", desc: "系统学习网络攻防与信息安全，为后续工程化与云端实践打下底层能力。", kind: "tech" },
-                  { year: "2019", title: "开始系统化学习 CS", desc: "以 Python / Java / Shell 为主，建立工程思维与自动化意识。", kind: "tech" },
-                  { year: "2020", title: "探索中西方命理基础", desc: "结合命理、心理学与哲学，构建独立的人生理解体系。", kind: "spiritual" },
-                  { year: "2021", title: "技术与方向沉淀", desc: "并行学习计算机与命理，开始思考二者如何融合。", kind: "crossover" },
-                  { year: "2022", title: "进入云计算与自动化", desc: "以 AWS、Terraform、容器化与 CI/CD 为核心，沉淀可复用的工程实践。", kind: "tech" },
-                  { year: "2023", title: "启动 Side Projects", desc: "将工程栈与创作结合，探索「命理 × AI × 文字 × 摄影」的表达边界，逐步面向疗愈与自我反思。", kind: "crossover" },
-                  { year: "2024", title: "Fatescope App 雏形", desc: "自研命理引擎 + AI 解读，提出「温柔而清晰」的指引理念，并与疗愈文字结合。", kind: "crossover" },
-                  { year: "2025", title: "独立产品与频道上线", desc: "建立个人网站，发布独立混合命理引擎 Alpha，并开设疗愈文字与摄影频道。", kind: "healing" },
-                  { year: "未来", title: "持续探索", desc: "在「技术 × 灵性 × 创作 × 疗愈」的交汇点上，构建更广阔的共鸣与指引系统。", kind: "crossover" },
+                  {
+                    year: "2014–2018",
+                    title: "University · Network Security",
+                    desc:
+                      "Studied network defense and information security—groundwork for later engineering and cloud work.",
+                    kind: "tech",
+                  },
+                  {
+                    year: "2019",
+                    title: "Beginning Systematic CS Study",
+                    desc:
+                      "Focused on Python, Java, and Shell; built engineering habits and an eye for automation.",
+                    kind: "tech",
+                  },
+                  {
+                    year: "2020",
+                    title: "Exploring Eastern and Western Astrology",
+                    desc:
+                      "Brought together astrology, psychology, and philosophy to form my own way of understanding life.",
+                    kind: "spiritual",
+                  },
+                  {
+                    year: "2021",
+                    title: "Consolidating Skills and Direction",
+                    desc:
+                      "Studied CS and astrology in parallel and started thinking about how they could fit together.",
+                    kind: "crossover",
+                  },
+                  {
+                    year: "2022",
+                    title: "Entering Cloud and Automation",
+                    desc:
+                      "Worked with AWS, Terraform, containerization, and CI/CD; built reusable, stable practices.",
+                    kind: "tech",
+                  },
+                  {
+                    year: "2023",
+                    title: "Launching Side Projects",
+                    desc:
+                      "Blended engineering with creative work—exploring ‘Astrology × AI × Writing × Photography’ with a focus on healing and self‑reflection.",
+                    kind: "crossover",
+                  },
+                  {
+                    year: "2024",
+                    title: "Fatescope App Prototype",
+                    desc:
+                      "Built an in‑house astrology engine with AI readings, aiming for guidance that’s gentle and clear.",
+                    kind: "crossover",
+                  },
+                  {
+                    year: "2025",
+                    title: "Independent Product and Channels",
+                    desc:
+                      "Launched my site, released the Alpha of the hybrid astrology engine, and opened a healing writing & photo channel.",
+                    kind: "healing",
+                  },
+                  {
+                    year: "Future",
+                    title: "Ongoing Exploration",
+                    desc:
+                      "Keep working where tech, spirituality, and creative healing meet—building tools that resonate and guide.",
+                    kind: "crossover",
+                  },
                 ].map((item, idx) => {
                   const now = new Date().getFullYear();
                   const match = String(item.year).match(/(\d{4})(?:[–-](\d{4}))?/);
@@ -592,8 +662,8 @@ export default function Home() {
                     state === "past"
                       ? "brand-dot-muted ring-1 ring-white/70 shadow-sm"
                       : state === "present"
-                        ? "brand-line-warm ring-2 ring-white shadow-[0_0_12px_rgba(56,189,248,0.35)]"
-                        : "brand-line-warm ring-2 ring-white shadow-md";
+                        ? "brand-line-cool ring-2 ring-white shadow-[0_0_12px_rgba(56,189,248,0.35)]"
+                        : "brand-line-cool ring-2 ring-white shadow-md";
 
                   const label =
                     item.kind === "tech"
@@ -606,17 +676,19 @@ export default function Home() {
 
                   return (
                     <li key={idx} className="relative pl-6 md:pl-7">
-                      {/* 灰系时间点（保留原风格） */}
+                      {/* timeline dot */}
                       <span
                         className={`
-            pointer-events-none absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
-            h-3.5 w-3.5 rounded-full ${dotClass}
-          `}
+                    pointer-events-none absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
+                    h-3.5 w-3.5 rounded-full ${dotClass}
+                  `}
                       />
                       {state === "present" && (
                         <span
-                          className="pointer-events-none absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
-                       h-3.5 w-3.5 rounded-full animate-ping opacity-30 brand-line-warm"
+                          className="
+                      pointer-events-none absolute left-0 top-[0.95em] -translate-x-1/2 -translate-y-1/2
+                      h-3.5 w-3.5 rounded-full animate-ping opacity-30 brand-line-cool
+                    "
                         />
                       )}
 
@@ -624,7 +696,7 @@ export default function Home() {
                         {item.year}
                       </time>
 
-                      {/* 标题 + 灰色标签 */}
+                      {/* title + gray label */}
                       <h3 className="mt-1 font-medium text-slate-900 inline-flex items-center gap-2">
                         {item.title}
                         <span className="text-[11px] px-1.5 py-0.5 rounded-full border border-slate-300 text-slate-600 bg-slate-50">
@@ -637,16 +709,10 @@ export default function Home() {
                   );
                 })}
               </ol>
-
-
             </div>
           </div>
         </GlassCard>
       </section>
-
-
-
-
 
       {/* Terminal-style Changelog (Digest) */}
       <TerminalChangelogDigest count={4} />
@@ -683,6 +749,7 @@ export default function Home() {
           </div>
         </GlassCard>
       </section>
+
 
       <Lightbox images={photos} />
     </main>
