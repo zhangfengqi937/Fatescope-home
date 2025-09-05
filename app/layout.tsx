@@ -1,7 +1,6 @@
 // app/layout.tsx
 import "./globals.css";
 import Header from "../components/Header";
-import LangGate from "../components/LangGate";
 import PhoenixGlobalBg from "@/components/PhoenixGlobalBg";
 import LanguageGate from "@/components/LanguageGate"; // 
 
@@ -58,7 +57,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* 2) 导航（放在主内容之前；提高层级） */}
         <div className="relative z-30">
           <Header />
-          <LangGate />
         </div>
 
         {/* 3) 主内容（单一 main；盖在背景之上） */}
