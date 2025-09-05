@@ -233,7 +233,7 @@ export default function HomeEn() {
                   Read on Substack
                 </Button>
                 <Button
-                  href="https://fatescope.substack.com/subscribe"
+                  href="https://lightdiary.substack.com/subscribe"
                   rel="noopener noreferrer"
                   variant="secondary"
                   size="md"
@@ -403,7 +403,7 @@ export default function HomeEn() {
               {/* 社交/入口 —— 已加 icon + data-analytics */}
               <div className="flex flex-wrap gap-2">
                 <Tag
-                  href="https://fatescope.substack.com"
+                  href="https://lightdiary.substack.com"
                   aria-label="Open Healing Notes (Substack)"
                   data-analytics="about.link.substack"
                 >
@@ -451,8 +451,7 @@ export default function HomeEn() {
                   <Mail className="h-4 w-4 mr-2" />
                   Email
                 </Button>
-
-                <Button
+              {/*<Button
                   href="https://forms.gle/your-form"
                   variant="secondary"
                   size="sm"
@@ -462,7 +461,8 @@ export default function HomeEn() {
                 >
                   <NotebookPen className="h-4 w-4 mr-2" />
                   Let’s Collaborate
-                </Button>
+                </Button> */}
+                
 
                 <a
                   href="mailto:contact@fatescope.com"

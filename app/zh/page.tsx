@@ -443,7 +443,7 @@ export default function Home() {
                   Email
                 </Button>
 
-                <Button
+              {/*<Button
                   href="https://forms.gle/your-form"
                   variant="secondary"
                   size="sm"
@@ -453,7 +453,7 @@ export default function Home() {
                 >
                   <NotebookPen className="h-4 w-4 mr-2" />
                   Let’s Collaborate
-                </Button>
+                </Button> */}
 
                 <a
                   href="mailto:contact@fatescope.com"

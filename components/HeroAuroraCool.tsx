@@ -146,7 +146,7 @@ export default function HeroAuroraCool() {
           <Button href="https://fatescope.app" rel="noopener noreferrer" variant="primary" size="md">
             Start your Journey
           </Button>
-          <Button href="https://fatescope.substack.com" rel="noopener noreferrer" variant="secondary" size="md">
+          <Button href="https://lightdiary.substack.com/" rel="noopener noreferrer" variant="secondary" size="md">
             Read Stories
           </Button>
           <a
