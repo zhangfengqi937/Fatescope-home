@@ -1,251 +1,266 @@
 {
-"web": [
-  {
-    "date": "2025-07-01",
-    "version": "site rev. #1",
-    "title": "Initial Setup",
-    "items": [
-      "Started with Next.js + TailwindCSS",
-      "Created bilingual pages (ZH & EN)",
-      "Built core sections: Hero, App, Gallery, Substack, About",
-      "Added personal photography to Gallery, content-license.md for protection, and MIT software license"
-    ]
-  },
-  {
-    "date": "2025-07-05",
-    "version": "site rev. #2",
-    "title": "Layout & Styling",
-    "items": [
-      "Designed two themes: Cool & Warm",
-      "Added Header / Navbar / i18n support",
-      "Introduced chips, labels, buttons, background styles",
-      "Implemented GlassCard component for sections",
-      "Enhanced navbar: glassy look, scroll highlight, click-to-activate; mobile menu support",
-      "Language switcher with preference memory; route toggle preserves hash",
-      "Unified pale-blue background, font sizes, line heights, and scroll margins",
-      "Finalized section structure and anchor layout"
-    ]
-  },
-  {
-    "date": "2025-07-10",
-    "version": "site rev. #3",
-    "title": "Gallery Enhancements",
-    "items": [
-      "Added Lightbox controls",
-      "Improved photo selection UX",
-      "Styled gallery buttons",
-      "Upgraded controls: round glass arrows, pill-style close, counter",
-      "Enabled keyboard support (←/→/Esc) and mobile swipe"
-    ]
-  },
-  {
-    "date": "2025-07-15",
-    "version": "site rev. #4",
-    "title": "English Page & Theming",
-    "items": [
-      "English page switched to cool-tone hero",
-      "Three cards themed with indigo/sky/slate glass tints",
-      "Navbar active color switches by language (cool = sky/indigo, warm = emerald/amber)"
-    ]
-  },
-  {
-    "date": "2025-07-25",
-    "version": "site rev. #5",
-    "title": "Aurora & Glass Overhaul",
-    "items": [
-      "New hero components (HeroAurora warm/cool) with radial gradients, paper highlights, subtle animation",
-      "Introduced GlassCard (glassmorphism + 1px highlight), theming via tint options",
-      "Rebuilt ClientGallery + Lightbox with modern UI (glass arrows, pill close, counter, swipe support)",
-      "Improved navigation: glass bar + scroll spy + click-to-activate; desktop & mobile",
-      "Enhanced i18n: LangSwitcher (remembers choice, preserves hash), LangGate (first-visit prompt)",
-      "Unified site structure: Hero → App → Gallery → Substack → About",
-      "Docs: added bilingual READMEs, Git guide (.gitignore template, merge/push options)",
-      "Fixes: standardized image paths, typed routes, server/client event handler split, Lightbox scoping"
-    ]
-  },
-  {
-    "date": "2025-08-08",
-    "version": "site rev. #6",
-    "title": "Core UI Adjustments",
-    "items": [
-      "HeroAurora & Cool: added feather illustration + animation",
-      "Tag buttons themed with site colors",
-      "Synced layout for ZH/EN pages while keeping distinct themes",
-      "Gallery: hover zoom + shadow fade-in",
-      "Scroll-in animations for sections",
-      "Navbar: added subtle shadow on scroll",
-      "Added GitHub links in menus (desktop + mobile)",
-      "About section: added email contact link",
-      "Hero: feather area with sparkling stars, brighter glow",
-      "App card: option to add custom moon image",
-      "CTA buttons, tags, and underlines refined by theme"
-    ]
-  },
-  {
-    "date": "2025-08-17",
-    "version": "site rev. #7",
-    "title": "GitHub Integration I",
-    "items": [
-      "Added Moon, MoonPhoto, Tag, Badge",
-      "Modified layout, Header, HeroAurora, Sparkle, FeatherPhoto",
-      "Enhanced ZH page layout; EN page kept as baseline for comparison"
-    ]
-  },
-  {
-    "date": "2025-08-18",
-    "version": "site rev. #8",
-    "title": "GitHub Integration II",
-    "items": [
-      "Prepared Navbar component",
-      "Modified Header, Layout, global.css, HeroAurora (both variants)",
-      "Aligned ZH & EN pages, kept consistent structure"
-    ]
-  },
-  {
-    "date": "2025-08-20",
-    "version": "site rev. #9",
-    "title": "Phoenix Background Prep",
-    "items": [
-      "Updated globals.css, ZH/EN layouts, ClientGallery, Header",
-      "Added two Phoenix components for future background use"
-    ]
-  },
-  {
-    "date": "2025-08-22",
-    "version": "site rev. #10",
-    "title": "Changelog & Timeline",
-    "items": [
-      "Updated globals.css and layout: added Phoenix & Moon backgrounds",
-      "Added Change Log & Timeline sections to homepage",
-      "Introduced social media icons & dataset.analytics",
-      "Created change.json for shared changelog (web + app)",
-      "Matched EN page to ZH page (translation pending)",
-      "Added more assets for background visuals"
-    ]
-  },
-  {
-    "date": "2025-08-25",
-    "version": "site rev. #11",
-    "title": "Content & Structure Update",
-    "items": [
-      "Refined Hero section details",
-      "Expanded App section with new images and info",
-      "Changed Gallery link to Glass Collection; removed Photo page",
-      "Improved About section and Timeline presentation",
-      "Updated Header with Timeline & Change Log links",
-      "Translated EN page to match ZH content"
-    ]
-  }
-]
-,
-"app": [
-  {
-    "date": "2024-07-05",
-    "version": "app rev. #1",
-    "title": "Data Intake MVP",
-    "items": [
-      "Built a minimal user form to submit core inputs (name, birthdate/time/place, question).",
-      "Added client/server validation with clear error states and helper texts.",
-      "Implemented basic loading states and result placeholder to prepare for API integration."
-    ]
-  },
-  {
-    "date": "2024-07-20",
-    "version": "app rev. #2",
-    "title": "OpenAI Integration & Baseline Evaluation",
-    "items": [
-      "Connected to OpenAI API; introduced structured prompts for explanatory output.",
-      "Benchmarked AI responses against early manual algorithms—kept AI for narrative/explanation only due to accuracy gap.",
-      "Logged model latency and token usage for later optimization; added basic rate limiting to protect the endpoint."
-    ]
-  },
-  {
-    "date": "2024-08-02",
-    "version": "app rev. #3",
-    "title": "Containerization & AWS Staging",
-    "items": [
-      "Created production-ready Dockerfile using multi-stage builds to minimize image size and improve security.",
-      "Configured .dockerignore to reduce build context and prevent sensitive files from being shipped.",
-      "Deployed Docker image to Amazon ECR (Elastic Container Registry), enabling centralized versioned storage.",
-      "Launched EC2 instance (Amazon Linux 2) as a staging environment; installed Docker and configured persistent volumes.",
-      "Bound EC2 instance role with minimal ECR pull permissions (IAM role vs. static keys) to enforce security best practices.",
-      "Added basic systemd service for container auto-restart, ensuring resilience in case of failure.",
-      "Documented deployment runbook for manual redeploys prior to automation stage."
-    ]
-  },
-  {
-    "date": "2024-08-15",
-    "version": "app rev. #4",
-    "title": "Terraform IaC Foundations",
-    "items": [
-      "Implemented Infrastructure as Code using Terraform to provision EC2, VPC networking, and IAM roles.",
-      "Created Terraform modules for security groups (restricted ports: SSH, HTTP/HTTPS), improving infra hygiene.",
-      "Configured Terraform state management (local, with roadmap to S3 backend + DynamoDB lock for HA).",
-      "Added IAM module: created role for EC2 with scoped-down policies (AmazonEC2ContainerRegistryReadOnly, CloudWatchAgentServerPolicy).",
-      "Separated developer IAM users from service roles, following principle of least privilege.",
-      "Introduced variables.tf and outputs.tf for reusability and modular deployments.",
-      "Added tagging convention for AWS resources (project, owner, environment), aiding cost tracking and compliance."
-    ]
-  },
-  {
-    "date": "2024-09-12",
-    "version": "app rev. #5",
-    "title": "CI/CD Pipeline (GitHub Actions)",
-    "items": [
-      "Set up GitHub Actions workflow: on commit → build Docker image → push to ECR → trigger EC2 deployment.",
-      "Used self-hosted runner on EC2 for zero-downtime rollout and rollback testing.",
-      "Introduced environment-specific branches (dev, staging, prod) with deployment matrix.",
-      "Configured GitHub Secrets for AWS credentials; replaced static keys with OIDC federated identity (GitHub → AWS) for short-lived tokens.",
-      "IAM hardening: created GitHub role with ECR push + EC2 deploy permissions only; separated build/deploy accounts.",
-      "Integrated smoke tests post-deployment to validate container health and API readiness.",
-      "Documented CI/CD flow including branching strategy, release tagging, rollback steps, and IAM trust policies."
-    ]
-  },
-  {
-    "date": "2024-10-11",
-    "version": "app rev. #6",
-    "title": "End-to-End Automation & Algorithm R&D",
-    "items": [
-      "Verified full automation path from commit to container rollout on EC2.",
-      "Bootstrapped proprietary astrology engine (Zi Wei Dou Shu / Bazi / Qimen scaffolding).",
-      "Separated calculation layer from explanation layer; used simulated chart data for early tests."
-    ]
-  },
-  {
-    "date": "2025-06-24",
-    "version": "app rev. #7",
-    "title": "Time-Based Divination Modules",
-    "items": [
-      "Added time-based divination flows for specific questions (e.g., event timing/decision support).",
-      "Continued refactoring of the core engine interfaces to support modular methods.",
-      "Regression-tested cloud automation; ensured idempotent deploys and rollback notes."
-    ]
-  },
-  {
-    "date": "2025-07-19",
-    "version": "app rev. #8",
-    "title": "Cloud Hardening, IAM & Monitoring",
-    "items": [
-      "Optimized CI/CD pipeline with dependency caching, reducing build time by ~30%.",
-      "Enabled AWS CloudWatch logging for EC2 and container logs; added custom log groups for app/API events.",
-      "Configured CloudWatch Alarms to detect high CPU, memory, or disk usage; wired alerts to email notification.",
-      "IAM hardening: rotated EC2 instance profiles, added CloudWatchAgentServerPolicy, restricted ECR roles to pull-only in staging.",
-      "Separated IAM users for dev/test/prod; enforced MFA for console access.",
-      "Restricted security groups: closed unused ports, enforced HTTPS-only public endpoints.",
-      "Added `/healthz` endpoint for health checks and tied to CloudWatch for availability tracking.",
-      "Implemented request throttling middleware in app layer to mitigate brute force or DDoS-like traffic.",
-      "Reviewed AWS Cost Explorer reports, set budget alarms; IAM billing role created for read-only finance team access."
-    ]
-  },
-  {
-    "date": "2025-08-19",
-    "version": "app rev. #9",
-    "title": "Chinese Core Algorithm & Divination",
-    "items": [
-      "Implemented Chinese core algorithm entry points; aligned output schema for downstream UI.",
-      "Added divination templates and story templates; expanded requirements.txt with pinned versions.",
-      "Validated end-to-end: app now handles a basic query via API and returns structured, explainable results."
-    ]
-  }
-]
+  "web": [
+    {
+      "date": "2025-07-01",
+      "version": "site rev. #1",
+      "title": "Initial Setup",
+      "items": [
+        "Started with Next.js + TailwindCSS",
+        "Created bilingual pages (ZH & EN)",
+        "Built core sections: Hero, App, Gallery, Substack, About",
+        "Added personal photography to Gallery, content-license.md for protection, and MIT software license"
+      ]
+    },
+    {
+      "date": "2025-07-05",
+      "version": "site rev. #2",
+      "title": "Layout & Styling",
+      "items": [
+        "Designed two themes: Cool & Warm",
+        "Added Header / Navbar / i18n support",
+        "Introduced chips, labels, buttons, background styles",
+        "Implemented GlassCard component for sections",
+        "Enhanced navbar: glassy look, scroll highlight, click-to-activate; mobile menu support",
+        "Language switcher with preference memory; route toggle preserves hash",
+        "Unified pale-blue background, font sizes, line heights, and scroll margins",
+        "Finalized section structure and anchor layout"
+      ]
+    },
+    {
+      "date": "2025-07-10",
+      "version": "site rev. #3",
+      "title": "Gallery Enhancements",
+      "items": [
+        "Added Lightbox controls",
+        "Improved photo selection UX",
+        "Styled gallery buttons",
+        "Upgraded controls: round glass arrows, pill-style close, counter",
+        "Enabled keyboard support (←/→/Esc) and mobile swipe"
+      ]
+    },
+    {
+      "date": "2025-07-15",
+      "version": "site rev. #4",
+      "title": "English Page & Theming",
+      "items": [
+        "English page switched to cool-tone hero",
+        "Three cards themed with indigo/sky/slate glass tints",
+        "Navbar active color switches by language (cool = sky/indigo, warm = emerald/amber)"
+      ]
+    },
+    {
+      "date": "2025-07-25",
+      "version": "site rev. #5",
+      "title": "Aurora & Glass Overhaul",
+      "items": [
+        "New hero components (HeroAurora warm/cool) with radial gradients, paper highlights, subtle animation",
+        "Introduced GlassCard (glassmorphism + 1px highlight), theming via tint options",
+        "Rebuilt ClientGallery + Lightbox with modern UI (glass arrows, pill close, counter, swipe support)",
+        "Improved navigation: glass bar + scroll spy + click-to-activate; desktop & mobile",
+        "Enhanced i18n: LangSwitcher (remembers choice, preserves hash), LangGate (first-visit prompt)",
+        "Unified site structure: Hero → App → Gallery → Substack → About",
+        "Docs: added bilingual READMEs, Git guide (.gitignore template, merge/push options)",
+        "Fixes: standardized image paths, typed routes, server/client event handler split, Lightbox scoping"
+      ]
+    },
+    {
+      "date": "2025-08-08",
+      "version": "site rev. #6",
+      "title": "Core UI Adjustments",
+      "items": [
+        "HeroAurora & Cool: added feather illustration + animation",
+        "Tag buttons themed with site colors",
+        "Synced layout for ZH/EN pages while keeping distinct themes",
+        "Gallery: hover zoom + shadow fade-in",
+        "Scroll-in animations for sections",
+        "Navbar: added subtle shadow on scroll",
+        "Added GitHub links in menus (desktop + mobile)",
+        "About section: added email contact link",
+        "Hero: feather area with sparkling stars, brighter glow",
+        "App card: option to add custom moon image",
+        "CTA buttons, tags, and underlines refined by theme"
+      ]
+    },
+    {
+      "date": "2025-08-17",
+      "version": "site rev. #7",
+      "title": "GitHub Integration I",
+      "items": [
+        "Added Moon, MoonPhoto, Tag, Badge",
+        "Modified layout, Header, HeroAurora, Sparkle, FeatherPhoto",
+        "Enhanced ZH page layout; EN page kept as baseline for comparison"
+      ]
+    },
+    {
+      "date": "2025-08-18",
+      "version": "site rev. #8",
+      "title": "GitHub Integration II",
+      "items": [
+        "Prepared Navbar component",
+        "Modified Header, Layout, global.css, HeroAurora (both variants)",
+        "Aligned ZH & EN pages, kept consistent structure"
+      ]
+    },
+    {
+      "date": "2025-08-20",
+      "version": "site rev. #9",
+      "title": "Phoenix Background Prep",
+      "items": [
+        "Updated globals.css, ZH/EN layouts, ClientGallery, Header",
+        "Added two Phoenix components for future background use"
+      ]
+    },
+    {
+      "date": "2025-08-22",
+      "version": "site rev. #10",
+      "title": "Changelog & Timeline",
+      "items": [
+        "Updated globals.css and layout: added Phoenix & Moon backgrounds",
+        "Added Change Log & Timeline sections to homepage",
+        "Introduced social media icons & dataset.analytics",
+        "Created change.json for shared changelog (web + app)",
+        "Matched EN page to ZH page (translation pending)",
+        "Added more assets for background visuals"
+      ]
+    },
+    {
+      "date": "2025-08-25",
+      "version": "site rev. #11",
+      "title": "Content & Structure Update",
+      "items": [
+        "Refined Hero section details",
+        "Expanded App section with new images and info",
+        "Changed Gallery link to Glass Collection; removed Photo page",
+        "Improved About section and Timeline presentation",
+        "Updated Header with Timeline & Change Log links",
+        "Translated EN page to match ZH content"
+      ]
+    },
+    {
+      "date": "2025-08-26",
+      "version": "site rev. #12",
+      "title": "Content & Structure Update",
+      "items": [
+        "Refined change log details and formatting",
+        "Fixed bilingual (ZH / EN) changelog page bug",
+        "Set English as the default landing page",
+        "Added LanguageGate prompt for user language selection",
+        "Updated EN Substack links",
+        "Revised App section to 'Coming Soon'",
+        "Added Milky Way photo to Gallery",
+        "Created new repository for FateScope 'Coming Soon' landing page",
+        "Host Both pages online via Vercel"
+      ]
+    }
+  ],
+  "app": [
+    {
+      "date": "2024-07-05",
+      "version": "app rev. #1",
+      "title": "Data Intake MVP",
+      "items": [
+        "Built a minimal user form to submit core inputs (name, birthdate/time/place, question).",
+        "Added client/server validation with clear error states and helper texts.",
+        "Implemented basic loading states and result placeholder to prepare for API integration."
+      ]
+    },
+    {
+      "date": "2024-07-20",
+      "version": "app rev. #2",
+      "title": "OpenAI Integration & Baseline Evaluation",
+      "items": [
+        "Connected to OpenAI API; introduced structured prompts for explanatory output.",
+        "Benchmarked AI responses against early manual algorithms—kept AI for narrative/explanation only due to accuracy gap.",
+        "Logged model latency and token usage for later optimization; added basic rate limiting to protect the endpoint."
+      ]
+    },
+    {
+      "date": "2024-08-02",
+      "version": "app rev. #3",
+      "title": "Containerization & AWS Staging",
+      "items": [
+        "Created production-ready Dockerfile using multi-stage builds to minimize image size and improve security.",
+        "Configured .dockerignore to reduce build context and prevent sensitive files from being shipped.",
+        "Deployed Docker image to Amazon ECR (Elastic Container Registry), enabling centralized versioned storage.",
+        "Launched EC2 instance (Amazon Linux 2) as a staging environment; installed Docker and configured persistent volumes.",
+        "Bound EC2 instance role with minimal ECR pull permissions (IAM role vs. static keys) to enforce security best practices.",
+        "Added basic systemd service for container auto-restart, ensuring resilience in case of failure.",
+        "Documented deployment runbook for manual redeploys prior to automation stage."
+      ]
+    },
+    {
+      "date": "2024-08-15",
+      "version": "app rev. #4",
+      "title": "Terraform IaC Foundations",
+      "items": [
+        "Implemented Infrastructure as Code using Terraform to provision EC2, VPC networking, and IAM roles.",
+        "Created Terraform modules for security groups (restricted ports: SSH, HTTP/HTTPS), improving infra hygiene.",
+        "Configured Terraform state management (local, with roadmap to S3 backend + DynamoDB lock for HA).",
+        "Added IAM module: created role for EC2 with scoped-down policies (AmazonEC2ContainerRegistryReadOnly, CloudWatchAgentServerPolicy).",
+        "Separated developer IAM users from service roles, following principle of least privilege.",
+        "Introduced variables.tf and outputs.tf for reusability and modular deployments.",
+        "Added tagging convention for AWS resources (project, owner, environment), aiding cost tracking and compliance."
+      ]
+    },
+    {
+      "date": "2024-09-12",
+      "version": "app rev. #5",
+      "title": "CI/CD Pipeline (GitHub Actions)",
+      "items": [
+        "Set up GitHub Actions workflow: on commit → build Docker image → push to ECR → trigger EC2 deployment.",
+        "Used self-hosted runner on EC2 for zero-downtime rollout and rollback testing.",
+        "Introduced environment-specific branches (dev, staging, prod) with deployment matrix.",
+        "Configured GitHub Secrets for AWS credentials; replaced static keys with OIDC federated identity (GitHub → AWS) for short-lived tokens.",
+        "IAM hardening: created GitHub role with ECR push + EC2 deploy permissions only; separated build/deploy accounts.",
+        "Integrated smoke tests post-deployment to validate container health and API readiness.",
+        "Documented CI/CD flow including branching strategy, release tagging, rollback steps, and IAM trust policies."
+      ]
+    },
+    {
+      "date": "2024-10-11",
+      "version": "app rev. #6",
+      "title": "End-to-End Automation & Algorithm R&D",
+      "items": [
+        "Verified full automation path from commit to container rollout on EC2.",
+        "Bootstrapped proprietary astrology engine (Zi Wei Dou Shu / Bazi / Qimen scaffolding).",
+        "Separated calculation layer from explanation layer; used simulated chart data for early tests."
+      ]
+    },
+    {
+      "date": "2025-06-24",
+      "version": "app rev. #7",
+      "title": "Time-Based Divination Modules",
+      "items": [
+        "Added time-based divination flows for specific questions (e.g., event timing/decision support).",
+        "Continued refactoring of the core engine interfaces to support modular methods.",
+        "Regression-tested cloud automation; ensured idempotent deploys and rollback notes."
+      ]
+    },
+    {
+      "date": "2025-07-19",
+      "version": "app rev. #8",
+      "title": "Cloud Hardening, IAM & Monitoring",
+      "items": [
+        "Optimized CI/CD pipeline with dependency caching, reducing build time by ~30%.",
+        "Enabled AWS CloudWatch logging for EC2 and container logs; added custom log groups for app/API events.",
+        "Configured CloudWatch Alarms to detect high CPU, memory, or disk usage; wired alerts to email notification.",
+        "IAM hardening: rotated EC2 instance profiles, added CloudWatchAgentServerPolicy, restricted ECR roles to pull-only in staging.",
+        "Separated IAM users for dev/test/prod; enforced MFA for console access.",
+        "Restricted security groups: closed unused ports, enforced HTTPS-only public endpoints.",
+        "Added `/healthz` endpoint for health checks and tied to CloudWatch for availability tracking.",
+        "Implemented request throttling middleware in app layer to mitigate brute force or DDoS-like traffic.",
+        "Reviewed AWS Cost Explorer reports, set budget alarms; IAM billing role created for read-only finance team access."
+      ]
+    },
+    {
+      "date": "2025-08-19",
+      "version": "app rev. #9",
+      "title": "Chinese Core Algorithm & Divination",
+      "items": [
+        "Implemented Chinese core algorithm entry points; aligned output schema for downstream UI.",
+        "Added divination templates and story templates; expanded requirements.txt with pinned versions.",
+        "Validated end-to-end: app now handles a basic query via API and returns structured, explainable results."
+      ]
+    }
+  ]
 }

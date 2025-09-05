@@ -47,7 +47,7 @@ export default function HomeEn() {
             </div>
 
             <p className="text-base md:text-lg text-slate-700 leading-8">
-              Independent Hybrid astrology algorithms (East × West) Engine × AI Insight. Your life map × soul guidance × personal destiny.
+              Independent Hybrid astrology algorithms (East × West) Engine Insight. Your life map × soul guidance × personal destiny.
               Not just astrology, but a light of wisdom that stays with you through every turning point.
             </p>
 
@@ -623,14 +623,14 @@ export default function HomeEn() {
                     year: "2023",
                     title: "Launching Side Projects",
                     desc:
-                      "Blended engineering with creative work—exploring ‘Astrology × AI × Writing × Photography’ with a focus on healing and self‑reflection.",
+                      "Blended engineering with creative work—exploring ‘Astrology × Writing × Photography’ with a focus on healing and self‑reflection.",
                     kind: "crossover",
                   },
                   {
                     year: "2024",
                     title: "Fatescope App Prototype",
                     desc:
-                      "Built an in‑house astrology engine with AI readings, aiming for guidance that’s gentle and clear.",
+                      "Built an in‑house astrology engine, aiming for guidance that’s gentle and clear.",
                     kind: "crossover",
                   },
                   {
