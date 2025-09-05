@@ -370,7 +370,7 @@ export default function HomeEn() {
                 </div>
                 <div className="flex-1 text-slate-700 leading-7 space-y-4">
                   <p>
-                    I'm <span className="font-medium">Francis</span>, focusing on the intersection of
+                    I am <span className="font-medium">Francis</span>, focusing on the intersection of
                     <span className="font-medium"> “Metaphysics × Technology × Creation × Healing”</span>.
                   </p>
 
@@ -539,7 +539,7 @@ export default function HomeEn() {
               </p>
 
               <p className="mt-6 italic text-slate-500 text-[14px] leading-6">
-                "Exploring how technology and spirituality intersect, turning engineering thinking into healing and creation."
+                 Exploring how technology and spirituality intersect, turning engineering thinking into healing and creation.
               </p>
 
             </div>
