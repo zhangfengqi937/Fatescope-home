@@ -95,12 +95,14 @@ export default function Home() {
 
             <div className="pt-2">
               <Button
+                href="https://fatescope.app"
+                rel="noopener noreferrer"
                 variant="primary"
                 size="md"
-                aria-label="FateScope App Coming Soon"
+                aria-label="打开 FateScope 应用"
                 disabled
               >
-                Coming Soon
+                开始探索
               </Button>
             </div>
 
@@ -578,7 +580,7 @@ export default function Home() {
                   { year: "2021", title: "技术与方向沉淀", desc: "并行学习计算机与命理，开始思考二者如何融合。", kind: "crossover" },
                   { year: "2022", title: "进入云计算与自动化", desc: "以 AWS、Terraform、容器化与 CI/CD 为核心，沉淀可复用的工程实践。", kind: "tech" },
                   { year: "2023", title: "启动 Side Projects", desc: "将工程栈与创作结合，探索「命理 × 文字 × 摄影」的表达边界，逐步面向疗愈与自我反思。", kind: "crossover" },
-                  { year: "2024", title: "Fatescope App 雏形", desc: "自研命理引擎 + AI 解读，提出「温柔而清晰」的指引理念，并与疗愈文字结合。", kind: "crossover" },
+                  { year: "2024", title: "Fatescope App 雏形", desc: "自研命理引擎解读，提出「温柔而清晰」的指引理念，并与疗愈文字结合。", kind: "crossover" },
                   { year: "2025", title: "独立产品与频道上线", desc: "建立个人网站，发布独立混合命理引擎 Alpha，并开设疗愈文字与摄影频道。", kind: "healing" },
                   { year: "未来", title: "持续探索", desc: "在「技术 × 灵性 × 创作 × 疗愈」的交汇点上，构建更广阔的共鸣与指引系统。", kind: "crossover" },
                 ].map((item, idx) => {

@@ -89,12 +89,14 @@ export default function HomeEn() {
 
             <div className="pt-2">
               <Button
+                href="https://fatescope.app"
+                rel="noopener noreferrer"
                 variant="primary"
                 size="md"
-                aria-label="FateScope App Coming Soon"
+                aria-label="打开 FateScope 应用"
                 disabled
               >
-                Coming Soon
+                开始探索
               </Button>
             </div>
           </div>

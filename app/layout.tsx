@@ -75,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               z-index 在组件内是 60/70，会覆盖全站并给背景磨砂 
               forceAlwaysOpen
               */}
-        <LanguageGate/> 
+        <LanguageGate /> 
 
       </body>
     </html>
