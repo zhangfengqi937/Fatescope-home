@@ -96,7 +96,7 @@ export default function HomeEn() {
                 aria-label="打开 FateScope 应用"
                 disabled
               >
-                开始探索
+                Start Exploring
               </Button>
             </div>
           </div>
