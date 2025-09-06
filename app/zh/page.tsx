@@ -73,8 +73,8 @@ export default function Home() {
             </h6>*/}
 
             <ul className="text-base text-slate-700 list-disc ml-5 space-y-2 leading-7">
-              <li>占卜 —— 按时间占卜特定事件，让选择不再孤单</li>
-              <li>灵魂故事 —— 生成你的前世今生剧本，以及与你人的灵魂羁绊</li>
+              <li>占卜 —— 占卜特定事件，让选择不再孤单</li>
+              <li>灵魂故事 —— 生成你的前世今生剧本，以及与他人的灵魂羁绊</li>
               <li>私人运势报告 —— 定制阶段性趋势与方向</li>
               <li>人生蓝图 —— 人生使命、整体运势与核心课题指引</li>
               <li>流年 / 流月 / 流日运势 —— 洞察关键节点</li>
